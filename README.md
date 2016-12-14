@@ -1,0 +1,2 @@
+# wasi
+Simple Headless CMS
