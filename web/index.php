@@ -4,6 +4,7 @@
   <h1>Wasi</h1>
   <p class="lead">Simple headless CMS</p>
   <a href="document.php" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> New content</a>
+  <a href="schema.php" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> New schema</a>
 </div>
 
 <div class="row">
