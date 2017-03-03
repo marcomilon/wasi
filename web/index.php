@@ -3,8 +3,16 @@
 <div class="page-header">
   <h1>Wasi</h1>
   <p class="lead">Simple headless CMS</p>
-  <a href="document.php" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> New content</a>
-  <a href="schema.php" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> New schema</a>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="actions">
+      <a href="document.php"><i class="fa fa-plus" aria-hidden="true"></i> New content</a>
+      &nbsp;&nbsp;
+      <a href="schema.php"><i class="fa fa-plus" aria-hidden="true"></i> New schema</a>
+    </div>
+  </div>
 </div>
 
 <div class="row">

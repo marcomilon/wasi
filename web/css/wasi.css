@@ -1,3 +1,29 @@
-#editor_holder div h3 {
-  display: none;
+body {
+  font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.breadcrumb {
+  background-color: #fff;
+  padding: 8px 0px;
+}
+.actions {
+  padding: 8px 0px;
+  margin-bottom: 15px;
+}
+
+.well {
+  background-color:#f5f5f5;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.well-sm {
+  padding: 10px 15px;
+}
+
+.select-schema {
+  padding: 10px 0;
 }

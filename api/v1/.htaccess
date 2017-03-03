@@ -2,6 +2,6 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^schema/$ schema.php [QSA,NC,L]
-RewriteRule ^schema/(.*)$ schema.php?request=$1 [QSA,NC,L]
+RewriteRule ^schemas$ schema/index.php [QSA,NC,L]
+RewriteRule ^schemas/(.*)$ schema/index.php?request=$1 [QSA,NC,L]
 </IfModule>

@@ -1,7 +1,39 @@
-<?php require('layout/header.php'); ?>
+<?php
+
+require('layout/header.php');
+require_once('config/web.php');
+
+if(!empty($_POST)) {
+
+  if(!empty($_POST['title']) && !empty($_POST['schema'])) {
+
+    $params = [
+      'title' => $_POST['title'],
+      'schema' => $_POST['schema']
+    ];
+
+    $query = http_build_query($params);
+
+    $contextData = [
+      'method' => 'POST',
+      'header' => "Connection: close\r\n".
+      "Content-Length: ".strlen($query)."\r\n",
+      'content'=> $query
+    ];
+
+    $context = stream_context_create(['http' => $contextData]);
+
+    // Read page rendered as result of your POST request
+    $result = file_get_contents($config['api'] . '/schemas', false, $context);
+    var_dump($result);
+  }
+
+}
+
+?>
 
 <div class="page-header">
-  <h1>Wasi</h1>
+  <h1><a href="index.php">Wasi</a></h1>
   <p class="lead">Create new schema</p>
 </div>
 
@@ -10,7 +42,7 @@
   <li class="active">New schema</li>
 </ol>
 
-<form method="post" action="/wasi/api/v1/schema/">
+<form method="post" action="">
   <div class="row">
     <div class="col-md-12">
       <div class="form-group">
@@ -18,7 +50,7 @@
         <input type="text" name="title" class="form-control" id="title" placeholder="Title">
       </div>
       <div class="form-group">
-        <label for="schema">Schema</label>
+        <label for="schema">Schema (Json)</label>
         <textarea class="form-control" name="schema" rows="12" id="schema"></textarea>
       </div>
     </div>
