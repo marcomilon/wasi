@@ -1,3 +1,9 @@
+<?php
+
+require_once('config/web.php');
+$schemas = json_decode(file_get_contents($config['api'] . '/schemas'));
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +18,7 @@
   <!-- Bootstrap core CSS -->
   <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/sidebar.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" rel="stylesheet">
   <link href="css/wasi.css" rel="stylesheet">
@@ -30,4 +37,23 @@
 </head>
 
 <body>
-  <div class="container">
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <h1><a href="index.php">Wasi</a></h1>
+        </li>
+        <?php foreach($schemas as $schema): ?>
+          <?php $item = json_decode($schema, true); ?>
+          <li><a href="list.php?hash=<?= $item['hash'] ?>"><?= $item['name'] ?> (0)</a></li>
+        <?php endforeach ?>
+      </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">

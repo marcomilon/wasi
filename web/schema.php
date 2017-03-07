@@ -5,10 +5,10 @@ require_once('config/web.php');
 
 if(!empty($_POST)) {
 
-  if(!empty($_POST['title']) && !empty($_POST['schema'])) {
+  if(!empty($_POST['name']) && !empty($_POST['schema'])) {
 
     $params = [
-      'title' => $_POST['title'],
+      'name' => $_POST['name'],
       'schema' => $_POST['schema']
     ];
 
@@ -32,13 +32,8 @@ if(!empty($_POST)) {
 
 ?>
 
-<div class="page-header">
-  <h1><a href="index.php">Wasi</a></h1>
-  <p class="lead">Create new schema</p>
-</div>
-
 <ol class="breadcrumb">
-  <li><a href="index.php">Home</a></li>
+  <li><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
   <li class="active">New schema</li>
 </ol>
 
@@ -46,8 +41,8 @@ if(!empty($_POST)) {
   <div class="row">
     <div class="col-md-12">
       <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+        <label for="name">Name</label>
+        <input type="text" name="name" class="form-control" id="name">
       </div>
       <div class="form-group">
         <label for="schema">Schema (Json)</label>

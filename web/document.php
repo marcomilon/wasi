@@ -7,13 +7,8 @@ $schemas = json_decode(file_get_contents($config['api'] . '/schemas'));
 
 ?>
 
-<div class="page-header">
-  <h1><a href="index.php">Wasi</a></h1>
-  <p class="lead">Create new content</p>
-</div>
-
 <ol class="breadcrumb">
-  <li><a href="index.php">Home</a></li>
+  <li><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
   <li class="active">Content</li>
 </ol>
 
@@ -29,15 +24,9 @@ $schemas = json_decode(file_get_contents($config['api'] . '/schemas'));
         <div id='editor_holder'></div>
       </div>
       <div class="col-md-4">
-        <h3><span>Schema</span></h3>
+        <h3><span>Metadata</span></h3>
         <div class="select-schema">
-          <label class="control-label">Please select</label>
-          <select class="selectpicker" data-live-search="true" data-width="100%">
-            <?php foreach($schemas as $schema): ?>
-              <?php $item = json_decode($schema); ?>
-              <option><?= $item->title ?></option>
-            <?php endforeach ?>
-          </select>
+          Created at: 10/02/2017 18:25
         </div>
       </div>
     </div>

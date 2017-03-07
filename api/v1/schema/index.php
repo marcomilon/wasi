@@ -20,17 +20,19 @@ $router->route('GET', '/schemas$/', function() use ($path) {
 });
 
 $router->route('POST', '/schemas$/',function() use ($path) {
-  $title  = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+  $name  = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
   $schema = filter_input(INPUT_POST, 'schema', FILTER_SANITIZE_STRING);
 
   $schema = trim(preg_replace('/\s+/S', '', $schema));
 
+  $hash = md5($schema);
   $data = [
-    'title' => $title,
+    'hash' => $hash,
+    'name' => $name,
     'schema' => $schema
   ];
 
-  $filename = $path['content'] . '/schema/'. md5(serialize($data)) . '.json';
+  $filename = $path['content'] . '/schema/'. $hash . '.json';
   $body = json_encode($data);
   echo file_put_contents($filename, $body);
 });
