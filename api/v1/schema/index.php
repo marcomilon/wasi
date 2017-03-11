@@ -2,26 +2,24 @@
 
 include '../../bootstrap.php';
 
-$router = new Wasi\Api\Router();
+use Wasi\Api\Handler\FileSystem\Schema;
+use Wasi\Api\Router;
 
-$router->route('GET', '/schemas$/', function() use ($path) {
-  echo "Hello";
-  exit();
-  $pattern = $path['content'] . '/schema/*.json';
-  $result = [];
-  foreach (glob($pattern) as $filename) {
-    $json = file_get_contents($filename);
-    $result[] = $json;
-  }
+$router = new Router();
 
-  header('Content-Type: application/json');
-  echo json_encode($result);
+$router->route('GET', '/schemas$/', function() {
+  $schema = new Schema();
+  echo $schema->items();
 });
 
-$router->route('POST', '/schemas$/',function() use ($path) {
+$router->route('GET', '/schemas\/(.*)$/', function($matches) {
+  $schema = new Schema();
+  echo $schema->read($matches);
+});
+
+$router->route('POST', '/schemas$/', function() {
   $name  = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
   $schema = filter_input(INPUT_POST, 'schema', FILTER_SANITIZE_STRING);
-
   $schema = trim(preg_replace('/\s+/S', '', $schema));
 
   $hash = md5($schema);
@@ -31,9 +29,8 @@ $router->route('POST', '/schemas$/',function() use ($path) {
     'schema' => $schema
   ];
 
-  $filename = $path['content'] . '/schema/'. $hash . '.json';
-  $body = json_encode($data);
-  echo file_put_contents($filename, $body);
+  $schema = new Schema();
+  echo $schema->create($hash, $data);
 });
 
 $router->execute();

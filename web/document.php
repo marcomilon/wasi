@@ -1,9 +1,10 @@
 <?php
 
-require_once('layout/header.php');
 require_once('config/web.php');
 
-$schemas = json_decode(file_get_contents($config['api'] . '/schemas'));
+$data = json_decode(file_get_contents($config['api'] . '/schemas/' . $_GET['hash']), true);
+
+require_once('layout/header.php');
 
 ?>
 
@@ -56,62 +57,30 @@ $schemas = json_decode(file_get_contents($config['api'] . '/schemas'));
     <div class="row">
       <div class="col-md-12">
         <textarea id="json_schema" class="form-control" rows="3" style="height: 400px">
-          {
-            "type": "object",
-            "title": "Email Template",
-            "properties": {
-              "p1": {
-                "type": "string",
-                "format": "textarea",
-                "options": {
-                  "rows": "10"
-                }
-              },
-              "p2": {
-                "type": "string",
-                "format": "textarea",
-                "options": {
-                  "rows": "10"
-                }
-              },
-              "p3": {
-                "type": "string",
-                "format": "textarea",
-                "options": {
-                  "rows": "10"
-                }
-              },
-              "p4": {
-                "type": "string",
-                "format": "textarea",
-                "options": {
-                  "rows": "10"
-                }
-              }
-            }
-          }</textarea>
-        </div>
+          <?= $data['schema'] ?>
+        </textarea>
       </div>
     </div>
-
   </div>
 
-  <script>
-  var schema = JSON.parse(document.getElementById("json_schema").value);
-  // Initialize the editor with a JSON schema
-  var editor = new JSONEditor(document.getElementById('editor_holder'), {
-    schema: schema,
-    disable_collapse: true,
-    disable_edit_json: true,
-    disable_properties: true
-  });
+</div>
 
-  // Hook up the submit button to log to the console
-  document.getElementById('submit').addEventListener('click',function() {
-    // Get the value from the editor
-    document.getElementById("output").value = JSON.stringify(editor.getValue());
-    document.getElementById("myForm").submit();
-  });
-  </script>
+<script>
+var schema = JSON.parse(document.getElementById("json_schema").value);
+// Initialize the editor with a JSON schema
+var editor = new JSONEditor(document.getElementById('editor_holder'), {
+  schema: schema,
+  disable_collapse: true,
+  disable_edit_json: true,
+  disable_properties: true
+});
 
-  <?php require('layout/footer.php'); ?>
+// Hook up the submit button to log to the console
+document.getElementById('submit').addEventListener('click',function() {
+  // Get the value from the editor
+  document.getElementById("output").value = JSON.stringify(editor.getValue());
+  document.getElementById("myForm").submit();
+});
+</script>
+
+<?php require('layout/footer.php'); ?>

@@ -1,16 +1,23 @@
-<?php require('layout/header.php'); ?>
+<?php
+
+require_once('config/web.php');
+$schemas = json_decode(file_get_contents($config['api'] . '/documents/' . $_GET['hash']));
+
+require('layout/header.php');
+
+?>
 
 <div class="row">
   <div class="col-md-12">
     <div class="actions">
-      <a href="schema.php"><i class="fa fa-plus" aria-hidden="true"></i> New schema</a>
+      <a href="document.php?hash=<?= $_GET['hash'] ?>"><i class="fa fa-plus" aria-hidden="true"></i> New document</a>
     </div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-12">
-    <h4>Available content</h4>
+    <h4>Available content: Name</h4>
     <table class="table">
       <thead>
         <tr>

@@ -1,34 +1,36 @@
 <?php
 
-require('layout/header.php');
 require_once('config/web.php');
 
-if(!empty($_POST)) {
+if(!empty($_POST) && isset($_POST['name']) && isset($_POST['schema'])) {
 
-  if(!empty($_POST['name']) && !empty($_POST['schema'])) {
+  $params = [
+    'name' => $_POST['name'],
+    'schema' => $_POST['schema']
+  ];
 
-    $params = [
-      'name' => $_POST['name'],
-      'schema' => $_POST['schema']
-    ];
+  $query = http_build_query($params);
 
-    $query = http_build_query($params);
+  $contextData = [
+    'method' => 'POST',
+    'header' => "Connection: close\r\n".
+    "Content-Length: ".strlen($query)."\r\n",
+    'content'=> $query
+  ];
 
-    $contextData = [
-      'method' => 'POST',
-      'header' => "Connection: close\r\n".
-      "Content-Length: ".strlen($query)."\r\n",
-      'content'=> $query
-    ];
+  $context = stream_context_create(['http' => $contextData]);
 
-    $context = stream_context_create(['http' => $contextData]);
+  // Read page rendered as result of your POST request
+  $result = file_get_contents($config['api'] . '/schemas', false, $context);
+  if($result > 0) {
+      header('Location: ' . $_SERVER['PHP_SELF']);
+      exit();
+  } else {
 
-    // Read page rendered as result of your POST request
-    $result = file_get_contents($config['api'] . '/schemas', false, $context);
-    var_dump($result);
   }
-
 }
+
+require('layout/header.php');
 
 ?>
 

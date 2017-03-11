@@ -1,14 +1,15 @@
 <?php
 
-require_once dirname(__FILE__) . '/../../config/api.php';
-$path = $config['paths'];
+include '../../bootstrap.php';
 
-require_once $path['classes'] . '/Router.php';
+use Wasi\Api\Router;
+use Wasi\Api\Handler\FileSystem\Content;
 
 $router = new Router();
 
 $router->route('GET', '/documents\/(.*)$/', function($matches) use ($path) {
-  var_dump($matches);
+  $content = new Content();
+  var_dump($matches);exit();
 });
 
 $router->execute();
