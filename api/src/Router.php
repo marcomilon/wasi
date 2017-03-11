@@ -1,5 +1,9 @@
 <?php
-class Router {
+
+namespace Wasi\Api;
+
+class Router
+{
 
   private $routes = [];
 

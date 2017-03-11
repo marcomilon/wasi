@@ -1,5 +1,7 @@
 <?php
 
+namespace Wasi\Content;
+
 interface Content {
   public function create();
   public function read();

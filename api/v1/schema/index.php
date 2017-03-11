@@ -1,13 +1,12 @@
 <?php
 
-require_once dirname(__FILE__) . '/../../config/api.php';
-$path = $config['paths'];
+include '../../bootstrap.php';
 
-require_once $path['classes'] . '/Router.php';
-
-$router = new Router();
+$router = new Wasi\Api\Router();
 
 $router->route('GET', '/schemas$/', function() use ($path) {
+  echo "Hello";
+  exit();
   $pattern = $path['content'] . '/schema/*.json';
   $result = [];
   foreach (glob($pattern) as $filename) {
