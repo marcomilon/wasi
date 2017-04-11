@@ -2,7 +2,7 @@
 
 require_once('config/web.php');
 
-$data = json_decode(file_get_contents($config['api'] . '/schemas/' . $_GET['hash']), true);
+$data = json_decode(file_get_contents($params['api'] . '/schemas/' . $_GET['hash']), true);
 
 require_once('layout/header.php');
 

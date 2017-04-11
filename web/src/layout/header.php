@@ -1,7 +1,8 @@
 <?php
 
-require_once('config/web.php');
-$schemas = json_decode(file_get_contents($config['api'] . '/schemas'));
+require_once dirname(__FILE__) . '/../config/web.php';
+
+$schemas = json_decode(file_get_contents($params['api'] . '/schemas'));
 
 ?>
 <!DOCTYPE html>
@@ -17,11 +18,11 @@ $schemas = json_decode(file_get_contents($config['api'] . '/schemas'));
 
   <!-- Bootstrap core CSS -->
   <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/sidebar.css" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="<?= $params['web'] ?>/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?= $params['web'] ?>/css/sidebar.css" rel="stylesheet">
+  <link href="<?= $params['web'] ?>/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" rel="stylesheet">
-  <link href="css/wasi.css" rel="stylesheet">
+  <link href="<?= $params['web'] ?>/css/wasi.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -29,7 +30,7 @@ $schemas = json_decode(file_get_contents($config['api'] . '/schemas'));
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <script src="js/jsoneditor.min.js"></script>
+  <script src="<?= $params['web'] ?>/js/jsoneditor.min.js"></script>
   <script>
   // Set the default CSS theme and icon library globally
   JSONEditor.defaults.theme = 'bootstrap3';
@@ -46,14 +47,17 @@ $schemas = json_decode(file_get_contents($config['api'] . '/schemas'));
         <li class="sidebar-brand">
           <h1><a href="index.php">Wasi</a></h1>
         </li>
+        <li><a href="<?= $params['web'] ?>/schema/index.php">Schemas</a></li>
+        <?php if(false): ?>
         <?php foreach($schemas as $schema): ?>
           <?php $item = json_decode($schema, true); ?>
           <li><a href="list.php?hash=<?= $item['hash'] ?>"><?= $item['name'] ?> (0)</a></li>
         <?php endforeach ?>
+      <?php endif; ?>
       </ul>
     </div>
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
-      <div class="container-fluid">
+      <div class="container container-wasi">

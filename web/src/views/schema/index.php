@@ -1,23 +1,23 @@
 <?php
 
-require_once('config/web.php');
-$schemas = json_decode(file_get_contents($params['api'] . '/documents/' . $_GET['hash']));
+require_once dirname(__FILE__) . '/../../../../config/web.php';
 
-require('layout/header.php');
+
+require($params['app'] .'/layout/header.php');
 
 ?>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-10">
     <div class="actions">
-      <a href="document.php?hash=<?= $_GET['hash'] ?>"><i class="fa fa-plus" aria-hidden="true"></i> New document</a>
+      <a href="schema.php" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> New schema</a>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-12">
-    <h4>Available content: Name</h4>
+  <div class="col-md-10">
+    <h4>Available content</h4>
     <table class="table">
       <thead>
         <tr>
@@ -54,4 +54,4 @@ require('layout/header.php');
   </div>
 </div>
 
-<?php require('layout/footer.php'); ?>
+<?php require($params['app'] .'/layout/footer.php'); ?>
