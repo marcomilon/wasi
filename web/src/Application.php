@@ -22,11 +22,24 @@ class Application
 
     $request = filter_input(INPUT_GET, 'r', FILTER_SANITIZE_STRING);
     $request = explode('/', trim($request, '/'));
-    $controller = isset($request[0]) && !empty($request[0]) ? ucwords(array_shift($request)) . 'Controller' : $params['defaultController'];
-    $action = isset($request[0]) && !empty($request[0]) ? array_shift($request) : 'index';
-    $parameters = $request;
 
-    $response = call_user_func_array([$controller, $action], $parameters);
+    $className = isset($request[0]) && !empty($request[0]) ? ucwords(array_shift($request)) . 'Controller' : $params['defaultController'];
+    $methodName = isset($request[0]) && !empty($request[0]) ? array_shift($request) : 'index';
+    $parameters = $_GET;
+
+    $controller = __NAMESPACE__ .'\Controllers\\'. $className;
+
+    $r = new \ReflectionMethod($controller, $methodName);
+    $params = $r->getParameters();
+    foreach ($params as $param) {
+        //$param is an instance of ReflectionParameter
+        echo $param->getName();
+        echo $param->isOptional();
+    }
+exit();
+
+    $obj = new $controller;
+    $response = call_user_func_array([$obj, $methodName], $parameters);
   }
 
   public static function getParams() {
