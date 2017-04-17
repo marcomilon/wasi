@@ -2,7 +2,9 @@
 
 namespace Wasi\Web\Controllers;
 
-class SchemaController {
+use Wasi\Web\Framework\Controller;
+
+class SchemaController extends Controller {
 
   public function index($id, $list) {
     echo "Schema";

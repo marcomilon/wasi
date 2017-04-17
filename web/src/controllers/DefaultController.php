@@ -2,10 +2,14 @@
 
 namespace Wasi\Web\Controllers;
 
-class DefaultController {
+use Wasi\Web\Framework\Controller;
+
+class DefaultController extends Controller {
 
   public function index() {
-    echo "Hello";
+    echo $this->render('index', [
+      'model' => 'sdfsdf'
+    ]);
   }
 
 }

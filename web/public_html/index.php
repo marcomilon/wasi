@@ -2,6 +2,6 @@
 
 include '../src/bootstrap.php';
 
-use Wasi\Web\Application;
+use Wasi\Web\Framework\Application;
 
 $application = new Application();
