@@ -11,11 +11,11 @@
 
   <!-- Bootstrap core CSS -->
   <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed" rel="stylesheet">
-  <link href="<?= \Wasi\Web\Framework\Application::params('public') ?>/css/bootstrap.min.css" rel="stylesheet">
-  <link href="<?= \Wasi\Web\Framework\Application::params('public') ?>/css/sidebar.css" rel="stylesheet">
-  <link href="<?= \Wasi\Web\Framework\Application::params('public') ?>/css/font-awesome.min.css" rel="stylesheet">
+  <link href="<?= \Wasi\Framework\Application::params('public') ?>/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?= \Wasi\Framework\Application::params('public') ?>/css/sidebar.css" rel="stylesheet">
+  <link href="<?= \Wasi\Framework\Application::params('public') ?>/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" rel="stylesheet">
-  <link href="<?= \Wasi\Web\Framework\Application::params('public') ?>/css/wasi.css" rel="stylesheet">
+  <link href="<?= \Wasi\Framework\Application::params('public') ?>/css/wasi.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -23,7 +23,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <script src="<?= \Wasi\Web\Framework\Application::params('public') ?>/js/jsoneditor.min.js"></script>
+  <script src="<?= \Wasi\Framework\Application::params('public') ?>/js/jsoneditor.min.js"></script>
   <script>
   // Set the default CSS theme and icon library globally
   JSONEditor.defaults.theme = 'bootstrap3';
@@ -40,7 +40,7 @@
         <li class="sidebar-brand">
           <h1><a href="index.php">Wasi</a></h1>
         </li>
-        <li><a href="<?= \Wasi\Web\Framework\Application::params('public') ?>/schema/index.php">Schemas</a></li>
+        <li><a href="<?= \Wasi\Framework\Application::params('public') ?>/schema/index.php">Schemas</a></li>
         <?php if(false): ?>
         <?php foreach($schemas as $schema): ?>
           <?php $item = json_decode($schema, true); ?>

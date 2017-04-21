@@ -8,14 +8,6 @@ class Controller {
     include dirname(__FILE__) . '/../config/web.php';
   }
 
-  private function renderHeader() {
-    include dirname(__DIR__) . '/layout/header.php';
-  }
-
-  private function renderFooter() {
-    include dirname(__DIR__) . '/layout/footer.php';
-  }
-
   protected function render($view, $params) {
 
     $classPath = get_class($this);
@@ -23,10 +15,10 @@ class Controller {
     $className = str_replace('controller', '', strtolower(end($explodeClassPath)));
 
     ob_start();
-    include dirname(__DIR__) . '/layout/header.php';
+    include dirname(__DIR__) . '/../web/src/layout/header.php';
     extract ($params);
-    include dirname(__DIR__) . '/views/'. $className .'/'. $view.'.php';
-    include dirname(__DIR__) . '/layout/footer.php';
+    include dirname(__DIR__) . '/../web/src/views/'. $className .'/'. $view.'.php';
+    include dirname(__DIR__) . '/../web/src/layout/footer.php';
     $out = ob_get_clean();
 
     echo $out;
