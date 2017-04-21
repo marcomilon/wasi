@@ -1,6 +1,6 @@
 <?php
 
-include '../src/bootstrap.php';
+include '../src/framework/bootstrap.php';
 
 use Wasi\Web\Framework\Application;
 
