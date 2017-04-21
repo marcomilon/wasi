@@ -20,8 +20,13 @@ class Controller {
 
   protected function render($view, $params) {
 
+    $classPath = get_class($this);
+    $explodeClassPath = explode('\\', $classPath);
+    $className = str_replace('controller', '', strtolower(end($explodeClassPath)));
+
     ob_start();
     include dirname(__DIR__) . '/layout/header.php';
+    include dirname(__DIR__) . '/views/'. $className .'/'. $view.'.php';
     include dirname(__DIR__) . '/layout/footer.php';
     $out = ob_get_clean();
 
