@@ -1,6 +1,6 @@
 <?php
 
-namespace Wasi\Web\Framework;
+namespace Wasi\Framework;
 
 class Application
 {
@@ -49,12 +49,12 @@ class Application
   }
 
   public static function getParams() {
-    include_once __DIR__ . '/../config/web.php';
+    include_once __DIR__ . '/../../web/src/config/web.php';
     return $params;
   }
 
   public static function params($key) {
-    include __DIR__ . '/../config/web.php';
+    include __DIR__ . '/../../web/src/config/web.php';
     return $params[$key];
   }
 

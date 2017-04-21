@@ -2,7 +2,7 @@
 
 namespace Wasi\Web\Controllers;
 
-use Wasi\Web\Framework\Controller;
+use Wasi\Framework\Controller;
 
 class DefaultController extends Controller {
 

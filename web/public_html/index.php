@@ -1,7 +1,7 @@
 <?php
 
-include '../src/framework/bootstrap.php';
+include '../../framework/bootstrap.php';
 
-use Wasi\Web\Framework\Application;
+use Wasi\Framework\Application;
 
 $application = new Application();

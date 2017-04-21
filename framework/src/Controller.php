@@ -1,8 +1,6 @@
 <?php
 
-namespace Wasi\Web\Framework;
-
-use Wasi\Web\Framework\Application;
+namespace Wasi\Framework;
 
 class Controller {
 
