@@ -8,7 +8,7 @@ class DefaultController extends Controller {
 
   public function index() {
     echo $this->render('index', [
-      'model' => 'sdfsdf'
+      'name' => 'Marco'
     ]);
   }
 

@@ -1,3 +1,3 @@
 <?php
 
-echo "soy index";
+echo "Hola " . $name;

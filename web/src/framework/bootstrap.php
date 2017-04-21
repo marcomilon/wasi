@@ -12,9 +12,9 @@ spl_autoload_register(function ($class) use($nameSpace) {
   $path = strtolower(implode('/', $path));
 
   if(empty($path)) {
-    include __DIR__ . '/' . $className . '.php';
+    include dirname (__DIR__) . '/' . $className . '.php';
   } else {
-    include __DIR__ . '/' . $path . '/' . $className . '.php';
+    include dirname (__DIR__) . '/' . $path . '/' . $className . '.php';
   }
 
 });

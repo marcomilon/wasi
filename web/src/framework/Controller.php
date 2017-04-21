@@ -26,6 +26,7 @@ class Controller {
 
     ob_start();
     include dirname(__DIR__) . '/layout/header.php';
+    extract ($params);
     include dirname(__DIR__) . '/views/'. $className .'/'. $view.'.php';
     include dirname(__DIR__) . '/layout/footer.php';
     $out = ob_get_clean();
