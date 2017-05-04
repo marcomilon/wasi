@@ -7,11 +7,11 @@ use Wasi\Framework\Controller;
 class SchemaController extends Controller {
 
   public function index() {
-    echo "Schema";
+    echo $this->render('index');
   }
 
-  public function helloworld() {
-    echo "helllWord";
+  public function create() {
+    echo "Create";
   }
 
 }
