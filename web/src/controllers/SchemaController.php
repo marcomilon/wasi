@@ -11,7 +11,7 @@ class SchemaController extends Controller {
   }
 
   public function create() {
-    echo "Create";
+    echo $this->render('create');
   }
 
 }
