@@ -40,13 +40,10 @@
         <li class="sidebar-brand">
           <h1><a href="index.php">Wasi</a></h1>
         </li>
-        <li><a href="<?= \Wasi\Framework\Application::params('public') ?>/schema/index.php">Schemas</a></li>
-        <?php if(false): ?>
-        <?php foreach($schemas as $schema): ?>
-          <?php $item = json_decode($schema, true); ?>
-          <li><a href="list.php?hash=<?= $item['hash'] ?>"><?= $item['name'] ?> (0)</a></li>
-        <?php endforeach ?>
-      <?php endif; ?>
+        <li><a href="<?= \Wasi\Framework\Application::params('public') ?>/index.php?r=schema/index">Schemas</a></li>
+        <li><a href="<?= \Wasi\Framework\Application::params('public') ?>/document/index.php">Documents</a></li>
+        <li><a href="<?= \Wasi\Framework\Application::params('public') ?>/page/index.php">Pages</a></li>
+
       </ul>
     </div>
     <!-- /#sidebar-wrapper -->
