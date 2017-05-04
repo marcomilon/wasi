@@ -6,7 +6,7 @@ use Wasi\Framework\Controller;
 
 class SchemaController extends Controller {
 
-  public function index($id, $list) {
+  public function index() {
     echo "Schema";
   }
 
