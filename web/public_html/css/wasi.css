@@ -2,16 +2,20 @@ body {
   font-family: 'Lato', sans-serif;
   color: #565656;
 }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Condensed', sans-serif;
 }
+
 .container-wasi {
   margin-left: 0;
 }
+
 .breadcrumb {
   background-color: #fff;
   padding: 8px 0px;
 }
+
 .actions {
   padding: 8px 0px;
   margin-bottom: 15px;
@@ -30,4 +34,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .select-schema {
   padding: 10px 0;
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle !important;
+}
+
+.btn-action {
+  color: #c3c3c3;
+  margin: 0 5px;
+  font-size: 23px;
+}
+
+.btn-action:hover {
+  color: #6a6a6a;
 }

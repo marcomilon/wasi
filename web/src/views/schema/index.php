@@ -1,24 +1,15 @@
-<?php
-
-require_once dirname(__FILE__) . '/../../../../config/web.php';
-
-
-require($params['app'] .'/layout/header.php');
-
-?>
-
 <div class="row">
-  <div class="col-md-10">
+  <div class="col-md-12">
     <div class="actions">
-      <a href="schema.php" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> New schema</a>
+      <a href=""><i class="fa fa-plus" aria-hidden="true"></i> New schema</a>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-10">
-    <h4>Available content</h4>
-    <table class="table">
+  <div class="col-md-12">
+    <h4>Schemas</h4>
+    <table class="table wasi">
       <thead>
         <tr>
           <th>#</th>
@@ -30,28 +21,26 @@ require($params['app'] .'/layout/header.php');
       </thead>
       <tbody>
         <tr>
-          <th scope="row">1</th>
+          <td>1</td>
           <td>Mark</td>
           <td>Otto</td>
           <td>@mdo</td>
           <td class="text-right">
-            <a class="btn btn-default btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i> Update</a>
-            <a class="btn btn-default btn-xs"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Delete</a>
+            <a href="" class="btn-action"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a href="" class="btn-action"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
           </td>
         </tr>
         <tr>
-          <th scope="row">1</th>
+          <td>2</td>
           <td>Mark</td>
           <td>Otto</td>
           <td>@mdo</td>
           <td class="text-right">
-            <a class="btn btn-default btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i> Update</a>
-            <a class="btn btn-default btn-xs"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Delete</a>
+            <a href="" class="btn-action"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a href="" class="btn-action"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
-
-<?php require($params['app'] .'/layout/footer.php'); ?>

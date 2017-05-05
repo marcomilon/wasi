@@ -4,6 +4,8 @@ namespace Wasi\Framework;
 
 class Controller {
 
+  public $nombre;
+
   private function getParameters() {
     include dirname(__FILE__) . '/../config/web.php';
   }
