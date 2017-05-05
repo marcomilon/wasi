@@ -11,8 +11,8 @@ class SchemaController extends Controller {
     ]);
   }
 
-  public function helloworld() {
-    echo "helllWord";
+  public function create() {
+    echo $this->render('create');
   }
 
 }

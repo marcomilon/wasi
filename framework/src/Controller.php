@@ -10,7 +10,7 @@ class Controller {
     include dirname(__FILE__) . '/../config/web.php';
   }
 
-  protected function render($view, $params) {
+  protected function render($view, $params = []) {
 
     $classPath = get_class($this);
     $explodeClassPath = explode('\\', $classPath);
