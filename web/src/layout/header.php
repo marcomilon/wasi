@@ -41,7 +41,7 @@
           <h1><a href="index.php">Wasi</a></h1>
         </li>
         <li><a href="index.php?r=schema/index">Schemas</a></li>
-        <li><a href="<?= \Wasi\Framework\Application::params('public') ?>/document/index.php">Documents</a></li>
+        <li><a href="index.php?r=document/index">Documents</a></li>
         <li><a href="<?= \Wasi\Framework\Application::params('public') ?>/page/index.php">Pages</a></li>
 
       </ul>
