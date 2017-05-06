@@ -49,3 +49,12 @@ h1, h2, h3, h4, h5, h6 {
 .btn-action:hover {
   color: #6a6a6a;
 }
+
+#editor {
+  margin: 0;
+  height: 400px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
