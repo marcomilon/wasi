@@ -18,10 +18,23 @@ class Schema implements SchemaInterface {
     return $json;
   }
 
+  public function delete($hash) {
+    $filename = __DIR__ . '/storage/schema/'. $hash . '.json';
+    if(is_file($filename)) {
+      unlink($filename);
+    }
+  }
+
   public function items() {
     $pattern = __DIR__ . '/storage/schema/*.json';
     $result = [];
-    foreach (glob($pattern) as $filename) {
+    $items = glob($pattern);
+
+    usort($items, function($a,$b){
+      return filemtime($a) - filemtime($b);
+    });
+
+    foreach ($items as $filename) {
       $json = file_get_contents($filename);
       $result[] = $json;
     }

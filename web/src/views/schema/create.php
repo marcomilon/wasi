@@ -1,6 +1,5 @@
 <ol class="breadcrumb">
-  <li><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-  <li class="active"><a href="index.php?r=schema">Schemas</a></li>
+  <li><a href="index.php?r=schema"><i class="fa fa-home" aria-hidden="true"></i> Schemas</a></li>
   <li class="active">New schema</li>
 </ol>
 
@@ -12,8 +11,8 @@
         <input type="text" name="name" class="form-control">
       </div>
       <div class="form-group">
-        <label for="schema">Schema (Json)</label>
-        <textarea name="schema" style="display: none;"></textarea>
+        <label for="body">Schema (Json)</label>
+        <textarea name="body" style="display: none;"></textarea>
         <pre id="editor"></pre>
       </div>
     </div>

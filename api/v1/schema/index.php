@@ -19,18 +19,23 @@ $router->route('GET', '/schemas\/(.*)$/', function($matches) {
 
 $router->route('POST', '/schemas$/', function() {
   $name  = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-  $schema = filter_input(INPUT_POST, 'schema', FILTER_SANITIZE_STRING);
-  $schema = trim(preg_replace('/\s+/S', '', $schema));
+  $body = filter_input(INPUT_POST, 'body', FILTER_SANITIZE_STRING);
+  $body = trim(preg_replace('/\s+/S', '', $body));
 
-  $hash = md5($schema);
+  $hash = md5($body);
   $data = [
     'hash' => $hash,
     'name' => $name,
-    'schema' => $schema
+    'body' => $body
   ];
 
   $schema = new Schema();
   echo $schema->create($hash, $data);
+});
+
+$router->route('DELETE', '/schemas\/(.*)$/', function($matches) {
+  $schema = new Schema();
+  echo $schema->delete($matches);
 });
 
 $router->execute();
