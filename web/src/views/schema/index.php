@@ -8,38 +8,25 @@
 
 <div class="row">
   <div class="col-md-12">
-    <h4>Available content: Name</h4>
+    <h4>Schemas</h4>
     <table class="table">
       <thead>
         <tr>
-          <th>#</th>
-          <th class="col-md-7">Content key</th>
-          <th>Created at</th>
-          <th>Last modified</th>
+          <th>Name</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td class="text-right">
-            <a class="btn btn-default btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i> Update</a>
-            <a class="btn btn-default btn-xs"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Delete</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td class="text-right">
-            <a class="btn btn-default btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i> Update</a>
-            <a class="btn btn-default btn-xs"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Delete</a>
-          </td>
-        </tr>
+        <?php foreach($schemas as $schema): ?>
+          <?php $item = json_decode($schema) ?>
+          <tr>
+            <td><?= $item->name ?></td>
+            <td class="text-right">
+              <a href="index.php?r=schema/update&hash=<?= $item->hash ?>" class="btn-action"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+              <a href="index.php?r=schema/delete&hash=<?= $item->hash ?>" class="btn-action"><i class="fa fa-trash" aria-hidden="true"></i></a>
+            </td>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
   </div>
