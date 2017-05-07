@@ -3,56 +3,44 @@
 namespace Wasi\Web\Controllers;
 
 use Wasi\Framework\Controller;
+use Wasi\Web\Models\Schema;
 
 class SchemaController extends Controller {
 
-
   public function index() {
-    $api = \Wasi\Framework\Application::params('api');
-    $schemas = json_decode(file_get_contents($api . '/schemas'));
+    $schema = new Schema();
+    $items = $schema->items();
+
     echo $this->render('index', [
-      'schemas' => $schemas
+      'items' => $items
     ]);
   }
 
   public function create() {
-
-    if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-
-      $params = [
-        'name' => $_POST['name'],
-        'schema' => $_POST['schema']
-      ];
-
-      $query = http_build_query($params);
-
-      $contextData = [
-        'method' => 'POST',
-        'header' => "Connection: close\r\n".
-        "Content-Length: ".strlen($query)."\r\n",
-        'content'=> $query
-      ];
-
-      $context = stream_context_create(['http' => $contextData]);
-
-      // Read page rendered as result of your POST request
-      $api = \Wasi\Framework\Application::params('api');
-      $result = file_get_contents($api . '/schemas', false, $context);
-      if($result > 0) {
-        header('Location: index.php?r=schema');
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
+      $schema = new Schema();
+      if($schema->create()) {
+        header("Location: index.php?r=schema");
         exit();
+      } else {
+
       }
     }
+
     echo $this->render('create');
   }
 
   public function update($hash) {
-    $api = \Wasi\Framework\Application::params('api');
-    $schema = json_decode(file_get_contents($api . '/schemas/'.$hash));
-
+    $schema = new Schema();
+    $item = $schema->read($hash);
     $this->render('update', [
-      'schema' => $schema
+      'item' => $item
     ]);
+  }
+
+  public function delete($hash) {
+    $schema = new Schema();
+    $schema->delete($hash);
   }
 
 }

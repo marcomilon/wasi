@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
-  <li><a href="index.php?r=schema"><i class="fa fa-home" aria-hidden="true"></i> Schemas</a></li>
-  <li class="active">New schema</li>
+  <li><a href="index.php?r=document"><i class="fa fa-home" aria-hidden="true"></i> Documents</a></li>
+  <li class="active">New document</li>
 </ol>
 
 <form method="post" action="">
@@ -8,12 +8,12 @@
     <div class="col-md-10">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" name="name" class="form-control" value="<?= $item->name ?>">
+        <input type="text" name="name" class="form-control">
       </div>
       <div class="form-group">
-        <label for="schema">Schema (Json)</label>
-        <textarea name="schema" style="display: none;"></textarea>
-        <pre id="editor"><?= $item->body ?></pre>
+        <label for="body">Schema (Json)</label>
+        <textarea name="body" style="display: none;"></textarea>
+        <pre id="editor"></pre>
       </div>
     </div>
   </div>

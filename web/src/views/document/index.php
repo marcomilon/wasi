@@ -1,14 +1,14 @@
 <div class="row">
   <div class="col-md-12">
     <div class="actions">
-      <a href="index.php?r=schema/create"><i class="fa fa-plus" aria-hidden="true"></i> New schema</a>
+      <a href="index.php?r=document/create"><i class="fa fa-plus" aria-hidden="true"></i> New document</a>
     </div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-12">
-    <h4>Schemas</h4>
+    <h4>Documents</h4>
     <table class="table">
       <thead>
         <tr>
@@ -30,7 +30,7 @@
           <?php endforeach; ?>
         <?php else: ?>
             <tr>
-                <td colspan="2">Schema db is empty</td>
+                <td colspan="2">Document db is empty</td>
             </tr>
         <?php endif; ?>
       </tbody>
