@@ -5,8 +5,11 @@ namespace Wasi\Framework;
 class Application
 {
 
-  public function __construct()
+  public static $params;
+
+  public function __construct($params)
   {
+    self::$params = $params;
     $this->setup();
     $this->route();
   }
@@ -49,12 +52,11 @@ class Application
   }
 
   public static function getParams() {
-    include_once __DIR__ . '/../../web/src/config/web.php';
-    return $params;
+    return self::$params;
   }
 
   public static function params($key) {
-    include __DIR__ . '/../../web/src/config/web.php';
+    $params = self::$params;
     return $params[$key];
   }
 
