@@ -32,23 +32,27 @@ class Application
 
     $controller = '\Wasi\Web\Controllers\\'. $className;
 
-    $parameters = [];
-    $r = new \ReflectionMethod($controller, $methodName);
-    $params = $r->getParameters();
-    foreach ($params as $param) {
-      $paramName = $param->getName();
+    try {
+      $parameters = [];
+      $r = new \ReflectionMethod($controller, $methodName);
+      $params = $r->getParameters();
+      foreach ($params as $param) {
+        $paramName = $param->getName();
 
-      $paramValue = filter_input(INPUT_GET, $paramName, FILTER_SANITIZE_STRING);
-      if(!empty($paramValue)) {
-        $parameters[$paramName] = $paramValue;
-      } else {
-        throw new \Exception('Required parameter missing. (' . $paramName . ')');
+        $paramValue = filter_input(INPUT_GET, $paramName, FILTER_SANITIZE_STRING);
+        if(!empty($paramValue)) {
+          $parameters[$paramName] = $paramValue;
+        } else {
+          throw new \Exception('Required parameter missing. (' . $paramName . ')');
+        }
       }
 
-    }
+      $obj = new $controller;
 
-    $obj = new $controller;
-    $response = call_user_func_array([$obj, $methodName], $parameters);
+      $response = call_user_func_array([$obj, $methodName], $parameters);
+    } catch (\Exception $e) {
+      $this->fatalError($e->getMessage());
+    }
   }
 
   public static function getParams() {
@@ -58,6 +62,15 @@ class Application
   public static function params($key) {
     $params = self::$params;
     return $params[$key];
+  }
+
+  private function fatalError($error) {
+    ob_start();
+    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
+    include dirname(__DIR__) . '/src/pages/500.php';
+    $out = ob_get_clean();
+    echo $out;
+    exit();
   }
 
 }

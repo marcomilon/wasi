@@ -2,15 +2,19 @@
 
 namespace Wasi\Web\Models;
 
-class Schema  {
+class Schema extends BaseModel  {
 
   public $name;
   public $body;
 
   public function items() {
-    $uri = $this->getUri();
+    try {
+      $json = $this->getJson($this->uri);
+    } catch (\Exception $e) {
+      $this->errors[] = $e->getMessage();
+    }
 
-    return json_decode(file_get_contents($uri));
+    return json_decode($json);
   }
 
   public function create() {
@@ -73,18 +77,6 @@ class Schema  {
     } else {
       return false;
     }
-  }
-
-  private function getUri() {
-    $api = \Wasi\Framework\Application::params('api');
-
-    if (php_sapi_name() == 'cli-server') {
-      $uri = $api . '/schema/schemas';
-    } else {
-      $uri = $api . '/schemas';
-    }
-
-    return $uri;
   }
 
 }
