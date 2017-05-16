@@ -51,3 +51,9 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="container container-wasi">
+
+        <?php if(!empty($errors)): ?>
+        <div class="alert alert-danger">
+          <strong>Danger!</strong> <?= $errors[0] ?>
+        </div>
+        <?php endif; ?>

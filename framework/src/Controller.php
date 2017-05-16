@@ -17,8 +17,8 @@ class Controller {
     $className = str_replace('controller', '', strtolower(end($explodeClassPath)));
 
     ob_start();
-    include dirname(__DIR__) . '/../web/src/layout/header.php';
     extract ($params);
+    include dirname(__DIR__) . '/../web/src/layout/header.php';
     include dirname(__DIR__) . '/../web/src/views/'. $className .'/'. $view.'.php';
     include dirname(__DIR__) . '/../web/src/layout/footer.php';
     $out = ob_get_clean();

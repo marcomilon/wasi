@@ -23,7 +23,7 @@ class BaseModel {
   public function getJson($uri) {
     $json = file_get_contents($uri);
     if(empty($json)) {
-      throw new \Exception('Unable to connecto to Api: ' . $uri);
+      throw new \Exception('Unable to connecto to: ' . $uri);
     }
   }
 

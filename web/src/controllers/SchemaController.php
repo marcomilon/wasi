@@ -8,11 +8,12 @@ use Wasi\Web\Models\Schema;
 class SchemaController extends Controller {
 
   public function index() {
-    $schema = new Schema();
-    $items = $schema->items();
+    $model = new Schema();
+    $items = $model->items();
 
     echo $this->render('index', [
-      'items' => $items
+      'items' => $items,
+      'errors' => $model->errors
     ]);
   }
 
@@ -22,8 +23,6 @@ class SchemaController extends Controller {
       if($schema->create()) {
         header("Location: index.php?r=schema");
         exit();
-      } else {
-
       }
     }
 
