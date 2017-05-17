@@ -2,9 +2,9 @@
 
 namespace Wasi\Web\Controllers;
 
-use Wasi\Framework\Controller;
+use Wasi\Web\Controllers\BaseController;
 
-class DefaultController extends Controller {
+class DefaultController extends BaseController {
 
   public function index() {
     echo $this->render('index', [

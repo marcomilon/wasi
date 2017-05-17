@@ -9,12 +9,8 @@ class Schema extends BaseModel  {
   public $errors;
 
   public function items() {
-    try {
-      $json = $this->getJson($this->uri);
-      return json_decode($json);
-    } catch (\Exception $e) {
-      $this->errors[] = $e->getMessage();
-    }
+    $json = $this->getJson($this->uri);
+    return json_decode($json);
   }
 
   public function create() {
