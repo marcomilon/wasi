@@ -2,7 +2,7 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ping$ ping/index.php [QSA,NC,L]
+RewriteRule ^ping$ status/index.php [QSA,NC,L]
 RewriteRule ^schemas$ schema/index.php [QSA,NC,L]
 RewriteRule ^schemas/(.*)$ schema/index.php [QSA,NC,L]
 RewriteRule ^documents/(.*)$ document/index.php [QSA,NC,L]
