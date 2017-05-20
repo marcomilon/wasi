@@ -25,6 +25,8 @@ class BaseModel {
     if(empty($json)) {
       throw new \Exception('Unable to connecto to: ' . $uri);
     }
+
+    return $json;
   }
 
 }

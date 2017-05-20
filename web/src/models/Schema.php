@@ -34,8 +34,7 @@ class Schema extends BaseModel  {
 
     $context = stream_context_create(['http' => $contextData]);
 
-    $uri = $this->getUri();
-    $result = file_get_contents($uri, false, $context);
+    $result = file_get_contents($this->uri, false, $context);
 
     if($result > 0) {
       return true;
