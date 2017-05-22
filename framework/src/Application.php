@@ -9,7 +9,10 @@ class Application
 
   public function __construct($params)
   {
+    set_error_handler([$this, 'handleError']);
+
     self::$params = $params;
+
     $this->setup();
     $this->route();
   }
@@ -51,8 +54,9 @@ class Application
 
       $response = call_user_func_array([$obj, $methodName], $parameters);
     } catch (\Exception $e) {
-      $this->fatalError($e->getMessage());
+      $this->renderErrorPage($e->getMessage());
     }
+
   }
 
   public static function getParams() {
@@ -64,7 +68,22 @@ class Application
     return $params[$key];
   }
 
-  private function fatalError($error) {
+  public function handleError($errno, $errstr, $errfile, $errline)
+  {
+    if (!(error_reporting() & $errno)) {
+      // This error code is not included in error_reporting, so let it fall
+      // through to the standard PHP error handler
+      return false;
+    }
+
+    //echo "Unknown error type: [$errno] $errstr<br />\n";
+    $this->renderErrorPage("[$errno] $errstr");
+
+    /* Don't execute PHP internal error handler */
+    return true;
+  }
+
+  public function renderErrorPage($error) {
     ob_start();
     header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
     include dirname(__DIR__) . '/src/pages/500.php';
