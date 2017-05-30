@@ -2,10 +2,9 @@
 
 namespace Wasi\Web\Controllers;
 
-use Wasi\Framework\Controller;
 use Wasi\Web\Models\Schema;
 
-class SchemaController extends Controller {
+class SchemaController extends BaseController {
 
   public function index() {
     $model = new Schema();

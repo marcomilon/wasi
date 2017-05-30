@@ -2,10 +2,7 @@
 
 namespace Wasi\Web\Controllers;
 
-use Wasi\Framework\Controller;
-
-
-class DocumentController extends Controller {
+class DocumentController extends BaseController {
 
   public function index() {
     $items = [];
