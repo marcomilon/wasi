@@ -14,8 +14,13 @@ class Schema implements SchemaInterface {
 
   public function read($hash) {
     $filename = __DIR__ . '/storage/schema/'. $hash . '.json';
-    $json = file_get_contents($filename);
-    return $json;
+    if(is_file($filename)) {
+      $json = file_get_contents($filename);
+      return $json;
+    } else {
+      header('HTTP/1.0 404 Not Found', true, 404);
+      exit();
+    }
   }
 
   public function delete($hash) {
@@ -30,9 +35,9 @@ class Schema implements SchemaInterface {
     $result = [];
     $items = glob($pattern);
 
-    usort($items, function($a,$b){
-      return filemtime($a) - filemtime($b);
-    });
+    // usort($items, function($a,$b){
+    //   return filemtime($b) - filemtime($a);
+    // });
 
     foreach ($items as $filename) {
       $json = file_get_contents($filename);

@@ -19,7 +19,7 @@ class Router
 
     $method = $_SERVER['REQUEST_METHOD'];
     $uri = $_SERVER['REQUEST_URI'];
-
+    
     foreach ($this->routes as $route) {
       if ($method == $route['method'] && preg_match($route['pattern'], $uri, $params) === 1) {
         array_shift($params);

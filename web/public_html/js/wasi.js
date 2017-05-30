@@ -7,11 +7,16 @@ $( document ).ready(function() {
 
     $('#modal-delete').modal('show').one('click', '#modal-delete-submit', function(e) {
       e.preventDefault();
-      $.get('index.php?r=schema/delete', { hash: hash } ).done(function( data ) {
-        location.reload();
-      });
 
       $('#modal-delete').modal('hide');
+
+      $.get('index.php?r=schema/delete', { hash: hash } )
+      .done(function( data ) {
+        location.reload();
+      }).fail(function() {
+        alert( "Opps, Unable to delete item." );
+      });
+            
     });
   });
 

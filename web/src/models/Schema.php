@@ -6,7 +6,19 @@ class Schema extends BaseModel  {
 
   public $name;
   public $body;
-  public $errors;
+
+  public function __construct() {
+    $api = \Wasi\Framework\Application::params('api');
+
+    if (php_sapi_name() == 'cli-server') {
+      $uri = $api . '/schema/schemas';
+    } else {
+      $uri = $api . '/schemas';
+    }
+
+    $this->uri = $uri;
+    $this->errors = [];
+  }
 
   public function items() {
     $json = $this->getJson($this->uri);
@@ -15,12 +27,14 @@ class Schema extends BaseModel  {
 
   public function create() {
 
-    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-    $body = filter_input(INPUT_POST, 'body', FILTER_SANITIZE_STRING);
+    if(empty($this->name) || empty($this->body)) {
+      $this->errors[] = "All inputs are required";
+      return false;
+    }
 
     $params = [
-      'name' => $name,
-      'body' => $body
+      'name' => $this->name,
+      'body' => $this->body
     ];
 
     $query = http_build_query($params);
@@ -28,7 +42,8 @@ class Schema extends BaseModel  {
     $contextData = [
       'method' => 'POST',
       'header' => "Connection: close\r\n".
-      "Content-Length: ".strlen($query)."\r\n",
+      "Content-Length: ".strlen($query)."\r\n".
+      "Content-Type: application/x-www-form-urlencoded\r\n",
       'content'=> $query
     ];
 
@@ -44,18 +59,46 @@ class Schema extends BaseModel  {
 
   }
 
+  public function update($hash) {
+
+    if(empty($this->name) || empty($this->body)) {
+      $this->errors[] = "All inputs are required";
+      return false;
+    }
+
+    $params = [
+      'name' => $this->name,
+      'body' => $this->body
+    ];
+
+    $query = http_build_query($params);
+
+    $contextData = [
+      'method' => 'PUT',
+      'header' => "Connection: close\r\n".
+      "Content-Length: ".strlen($query)."\r\n".
+      "Content-Type: application/x-www-form-urlencoded\r\n",
+      'content'=> $query
+    ];
+
+    $context = stream_context_create(['http' => $contextData]);
+
+    $result = file_get_contents($this->uri . '/' . $hash, false, $context);
+
+    if($result > 0) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
   public function read($hash) {
-    $hash = filter_input(INPUT_GET, 'hash', FILTER_SANITIZE_STRING);
-
-    $uri = $this->getUri();
-    $item = json_decode(file_get_contents($uri . '/'.$hash));
-
+    $item = json_decode(file_get_contents($this->uri . '/' . $hash));
     return $item;
   }
 
   public function delete($hash) {
-    $hash = filter_input(INPUT_GET, 'hash', FILTER_SANITIZE_STRING);
-
     $contextData = [
       'method' => 'DELETE',
       'header' => "Connection: close\r\n"
@@ -63,9 +106,7 @@ class Schema extends BaseModel  {
 
     $context = stream_context_create(['http' => $contextData]);
 
-    $uri = $this->getUri();
-
-    $result = file_get_contents($uri . '/'.$hash, false, $context);
+    $result = file_get_contents($this->uri . '/'.$hash, false, $context);
 
     if($result > 0) {
       return true;

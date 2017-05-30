@@ -75,7 +75,7 @@ class Application
       // through to the standard PHP error handler
       return false;
     }
-
+    
     //echo "Unknown error type: [$errno] $errstr<br />\n";
     $this->renderErrorPage("[$errno] $errstr");
 
