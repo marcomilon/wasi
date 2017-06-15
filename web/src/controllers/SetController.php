@@ -11,6 +11,10 @@ class SetController extends BaseController {
     echo $this->render('index',
     ['items' => []]
   );
-  }
+}
+
+public function create() {
+  echo $this->render('create');
+}
 
 }
