@@ -22,7 +22,7 @@ $router->route('POST', '/schemas$/', function() {
   $body = filter_input(INPUT_POST, 'body', FILTER_SANITIZE_STRING);
   $body = trim(preg_replace('/\s+/S', '', $body));
 
-  $hash = md5($body);
+  $hash = md5($body.time());
   $data = [
     'hash' => $hash,
     'name' => $name,

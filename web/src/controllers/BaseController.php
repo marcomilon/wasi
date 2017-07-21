@@ -10,7 +10,9 @@ class BaseController extends Controller {
     $api = \Wasi\Framework\Application::params('api');
     $uri = $api . '/ping';
 
+
     $json = file_get_contents($uri);
+
     if(empty($json)) {
       throw new \Exception('Unable to connecto to Api: ' . $api);
     }
