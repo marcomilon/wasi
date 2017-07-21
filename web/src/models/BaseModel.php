@@ -4,6 +4,8 @@ namespace Wasi\Web\Models;
 
 class BaseModel {
 
+  public $name;
+  public $body;
   public $uri;
   public $errors;
 

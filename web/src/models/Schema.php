@@ -4,9 +4,6 @@ namespace Wasi\Web\Models;
 
 class Schema extends BaseModel  {
 
-  public $name;
-  public $body;
-
   public function __construct() {
     $api = \Wasi\Framework\Application::params('api');
 
