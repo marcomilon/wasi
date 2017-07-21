@@ -3,6 +3,7 @@
 namespace Wasi\Web\Controllers;
 
 use Wasi\Web\Models\Schema;
+use Wasi\Web\Models\Set;
 
 class SetController extends BaseController {
 
@@ -14,7 +15,29 @@ class SetController extends BaseController {
 }
 
 public function create() {
-  echo $this->render('create');
+
+  $schema = new Schema();
+  $items = $schema->items();
+
+  $set = new Set();
+
+  if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $body = filter_input(INPUT_POST, 'body', FILTER_SANITIZE_STRING);
+
+    $schema->name = $name;
+    $schema->body = $body;
+
+    if($set->create()) {
+      header("Location: index.php?r=set");
+      exit();
+    }
+  }
+
+
+  echo $this->render('create', [
+    'items' => $items
+  ]);
 }
 
 }

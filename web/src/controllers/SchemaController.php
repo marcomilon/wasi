@@ -21,7 +21,6 @@ class SchemaController extends BaseController {
     $schema = new Schema();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
-
       $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
       $body = filter_input(INPUT_POST, 'body', FILTER_SANITIZE_STRING);
 

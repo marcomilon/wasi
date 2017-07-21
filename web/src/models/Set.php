@@ -2,7 +2,7 @@
 
 namespace Wasi\Web\Models;
 
-class Schema extends BaseModel  {
+class Set extends BaseModel  {
 
   public $name;
   public $body;
@@ -11,9 +11,9 @@ class Schema extends BaseModel  {
     $api = \Wasi\Framework\Application::params('api');
 
     if (php_sapi_name() == 'cli-server') {
-      $uri = $api . '/schema/schemas';
+      $uri = $api . '/schema/set';
     } else {
-      $uri = $api . '/schemas';
+      $uri = $api . '/sets';
     }
 
     $this->uri = $uri;

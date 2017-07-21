@@ -6,6 +6,6 @@ use Wasi\Api\Handler\FileSystem\Schema;
 use Wasi\Api\RouterWrapper;
 
 $model = new Schema();
-$uri = 'schemas';
+$uri = 'sets';
 $routerWrapper = new RouterWrapper($model, $uri);
 $routerWrapper->execute();

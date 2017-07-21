@@ -14,7 +14,6 @@
   <link href="<?= \Wasi\Framework\Application::params('public') ?>/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?= \Wasi\Framework\Application::params('public') ?>/css/sidebar.css" rel="stylesheet">
   <link href="<?= \Wasi\Framework\Application::params('public') ?>/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" rel="stylesheet">
   <link href="<?= \Wasi\Framework\Application::params('public') ?>/css/wasi.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
