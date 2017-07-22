@@ -11,7 +11,7 @@ class Set extends BaseModel  {
     $api = \Wasi\Framework\Application::params('api');
 
     if (php_sapi_name() == 'cli-server') {
-      $uri = $api . '/schema/set';
+      $uri = $api . '/set/sets';
     } else {
       $uri = $api . '/sets';
     }

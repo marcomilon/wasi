@@ -2,10 +2,10 @@
 
 namespace Wasi\Api\Handler\FileSystem;
 
-class Schema extends Data {
+class Set extends Data {
 
   public function __construct() {
-    $this->path = __DIR__ . '/storage/schema/';
+    $this->path = __DIR__ . '/storage/set/';
   }
 
 }

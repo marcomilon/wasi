@@ -46,7 +46,7 @@
               <tr>
                 <td><?= $schema->name ?></td>
                 <td class="text-right">
-                  <input type="checkbox" name="schemas[<?= $index ?>]" value="<?= $schema->hash ?>">
+                  <input type="checkbox" name="body[<?= $index ?>]" value="<?= $schema->hash ?>">
                 </td>
               </tr>
               <?php $index++ ?>

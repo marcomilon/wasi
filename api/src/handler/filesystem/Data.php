@@ -6,18 +6,16 @@ use Wasi\Api\Handler\DataInterface;
 
 class Data implements DataInterface {
 
-  public function __construct($path) {
-  
-  }
+  public $path;
 
   public function create($hash, $data) {
-    $filename = __DIR__ . '/storage/schema/'. $hash . '.json';
+    $filename = $this->path . $hash . '.json';
     $body = json_encode($data);
     return file_put_contents($filename, $body);
   }
 
   public function read($hash) {
-    $filename = __DIR__ . '/storage/schema/'. $hash . '.json';
+    $filename = $this->path . $hash . '.json';
     if(is_file($filename)) {
       $json = file_get_contents($filename);
       return $json;
@@ -28,14 +26,14 @@ class Data implements DataInterface {
   }
 
   public function delete($hash) {
-    $filename = __DIR__ . '/storage/schema/'. $hash . '.json';
+    $filename = $this->path . $hash . '.json';
     if(is_file($filename)) {
       unlink($filename);
     }
   }
 
   public function items() {
-    $pattern = __DIR__ . '/storage/schema/*.json';
+    $pattern = $this->path . '*.json';
     $result = [];
     $items = glob($pattern);
 

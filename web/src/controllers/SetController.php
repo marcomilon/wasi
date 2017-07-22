@@ -23,10 +23,10 @@ public function create() {
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-    $body = filter_input(INPUT_POST, 'body', FILTER_SANITIZE_STRING);
+    $body = filter_input(INPUT_POST, 'body', FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
 
-    $schema->name = $name;
-    $schema->body = $body;
+    $set->name = $name;
+    $set->body = json_encode($body);
 
     if($set->create()) {
       header("Location: index.php?r=set");
@@ -36,7 +36,8 @@ public function create() {
 
 
   echo $this->render('create', [
-    'items' => $items
+    'items' => $items,
+    'model' => $set
   ]);
 }
 
