@@ -39,9 +39,9 @@
         <li class="sidebar-brand">
           <h1><a href="index.php">Wasi</a></h1>
         </li>
-        <li><a href="index.php?r=schema/index">Schemas</a></li>
-        <li><a href="index.php?r=set/index">Set</a></li>
-        <li><a href="index.php?r=document/index">Document</a></li>
+        <li><a href="index.php?r=schema/index" <?= isset($_GET['r']) && $_GET['r'] == 'schema/index' ? 'class="active"' : '' ?>>Schemas</a></li>
+        <li><a href="index.php?r=set/index" <?= isset($_GET['r']) && $_GET['r'] == 'set/index' ? 'class="active"' : '' ?>>Set</a></li>
+        <li><a href="index.php?r=document/index" <?= isset($_GET['r']) && $_GET['r'] == 'document/index' ? 'class="active"' : '' ?>>Document</a></li>
 
       </ul>
     </div>

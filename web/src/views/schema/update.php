@@ -31,7 +31,7 @@
   </div>
   <div class="row">
     <div class="col-md-10 text-right">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Update</button>
     </div>
   </div>
 </form>
