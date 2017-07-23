@@ -2,6 +2,8 @@
 
 namespace Wasi\Web\Controllers;
 
+use Wasi\Web\Models\Set;
+
 class DocumentController extends BaseController {
 
   public function index() {
@@ -13,7 +15,12 @@ class DocumentController extends BaseController {
   }
 
   public function create() {
-    echo $this->render('create');
+    $set = new Set();
+    $items = $set->items();
+
+    echo $this->render('create', [
+      'items' => $items
+    ]);
   }
 
 }

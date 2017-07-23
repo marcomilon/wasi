@@ -1,6 +1,6 @@
 <?php
 
-namespace Wasi\Api\Handler\FileSystem;
+namespace Wasi\Api\Io\FileSystem;
 
 class Schema extends Data {
 

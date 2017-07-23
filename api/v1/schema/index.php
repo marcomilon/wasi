@@ -2,10 +2,11 @@
 
 include '../../bootstrap.php';
 
-use Wasi\Api\Handler\FileSystem\Schema;
+use Wasi\Api\Io\Schema;
 use Wasi\Api\RouterWrapper;
 
-$model = new Schema();
+$schema = new Schema(new Wasi\Api\Io\FileSystem\Schema());
+$model = $schema->getModel();
 $uri = 'schemas';
 $routerWrapper = new RouterWrapper($model, $uri);
 $routerWrapper->execute();

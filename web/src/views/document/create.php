@@ -11,9 +11,15 @@
         <input type="text" name="name" class="form-control">
       </div>
       <div class="form-group">
-        <label for="body">Schema (Json)</label>
-        <textarea name="body" style="display: none;"></textarea>
-        <pre id="editor"></pre>
+        <label for="sel1">Select the set to implement:</label>
+        <select class="form-control" id="sel1">
+          <?php if(!empty($items)): ?>
+            <?php foreach($items as $item): ?>
+              <?php $schema = json_decode($item) ?>
+              <option><?= $schema->name ?></option>
+            <?php endforeach; ?>
+          <?php endif; ?>
+        </select>
       </div>
     </div>
   </div>

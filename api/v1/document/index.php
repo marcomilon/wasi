@@ -3,7 +3,7 @@
 include '../../bootstrap.php';
 
 use Wasi\Api\Router;
-use Wasi\Api\Handler\FileSystem\Content;
+use Wasi\Api\Io\FileSystem\Content;
 
 $router = new Router();
 

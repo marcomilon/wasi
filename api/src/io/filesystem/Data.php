@@ -1,8 +1,8 @@
 <?php
 
-namespace Wasi\Api\Handler\FileSystem;
+namespace Wasi\Api\Io\FileSystem;
 
-use Wasi\Api\Handler\DataInterface;
+use Wasi\Api\Io\DataInterface;
 
 class Data implements DataInterface {
 
