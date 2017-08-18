@@ -11,7 +11,19 @@ class Data implements DataInterface {
   public function create($hash, $data) {
     $filename = $this->path . $hash . '.json';
     $body = json_encode($data);
-    return file_put_contents($filename, $body);
+
+    if (!is_writable($this->path)) {
+      header('HTTP/1.0 500 Unable to write to file: ' . $filename . ' Permission denied.', true, 500);
+      exit();
+    }
+
+    $result = file_put_contents($filename, $body);
+    if($result === false) {
+      header('HTTP/1.0 500 Unable to write to file', true, 500);
+      exit();
+    } else {
+      return $result;
+    }
   }
 
   public function read($hash) {

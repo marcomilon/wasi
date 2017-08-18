@@ -2,15 +2,18 @@
 
 namespace Wasi\Web\Controllers;
 
+use Wasi\Web\Models\Document;
 use Wasi\Web\Models\Set;
 
 class DocumentController extends BaseController {
 
   public function index() {
-    $items = [];
+    $model = new Document();
+    $items = $model->items();
 
     echo $this->render('index', [
-      'items' => $items
+      'items' => $items,
+      'errors' => $model->errors
     ]);
   }
 

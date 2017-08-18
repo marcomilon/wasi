@@ -2,15 +2,15 @@
 
 namespace Wasi\Web\Models;
 
-class Set extends BaseModel  {
+class Document extends BaseModel  {
 
   public function __construct() {
     $api = \Wasi\Framework\Application::params('api');
 
     if (php_sapi_name() == 'cli-server') {
-      $uri = $api . '/set/sets';
+      $uri = $api . '/document/documents';
     } else {
-      $uri = $api . '/sets';
+      $uri = $api . '/documents';
     }
 
     $this->uri = $uri;

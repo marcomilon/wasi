@@ -2,14 +2,11 @@
 
 include '../../bootstrap.php';
 
-use Wasi\Api\Router;
-use Wasi\Api\Io\FileSystem\Content;
+use Wasi\Api\Io\Document;
+use Wasi\Api\RouterWrapper;
 
-$router = new Router();
-
-$router->route('GET', '/documents\/(.*)$/', function($matches) use ($path) {
-  $content = new Content();
-  var_dump($matches);exit();
-});
-
-$router->execute();
+$document = new Set(new Wasi\Api\Io\FileSystem\Document());
+$model = $document->getModel();
+$uri = 'documents';
+$routerWrapper = new RouterWrapper($model, $uri);
+$routerWrapper->execute();
