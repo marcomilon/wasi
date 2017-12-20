@@ -1,0 +1,29 @@
+html, body {
+  height: 100%;
+}
+
+.menu {
+    background-color: #0747a6;
+    color: #ffffff;
+}
+
+.menu__title {
+    margin: 20px 0 20px 15px;
+}
+
+.menu__link {
+    color: #ffffff;
+}
+
+.menu__link:hover {
+    color: #d2d2d2;
+}
+
+.main {
+    margin-top: 20px;
+}
+
+.main__title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}

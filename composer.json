@@ -1,0 +1,26 @@
+{
+    "name": "fullstackpe/micro-basic-app",
+    "description": "Micro Basic Application Template",
+    "license": "MIT",
+    "keywords": ["framework", "project template"],
+    "authors": [
+      {
+        "name": "Marco Milon",
+        "email": "marco.milon@gmail.com"
+      }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/marcomilon/micro.git"
+        }
+    ],
+    "require": {
+        "fullstackpe/micro": "^1.1"
+    },
+    "autoload": {
+      "psr-4": {
+        "app\\controller\\": "controllers"
+      }
+    }
+}
