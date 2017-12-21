@@ -12,4 +12,9 @@ class SchemaCtrl extends Controller
         return $this->render('index');
     }
     
+    public function create() 
+    {
+        return $this->render('create');
+    }
+    
 }
