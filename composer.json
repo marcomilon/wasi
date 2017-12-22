@@ -13,10 +13,15 @@
         {
             "type": "git",
             "url": "https://github.com/marcomilon/micro.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/marcomilon/micro-form.git"
         }
     ],
     "require": {
-        "fullstackpe/micro": "^1.1"
+        "fullstackpe/micro": "dev-dev",
+        "fullstackpe/micro-form": "@dev"
     },
     "autoload": {
       "psr-4": {

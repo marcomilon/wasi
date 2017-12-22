@@ -4,18 +4,19 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a08ee20ec045ce9c423196f51229e22e",
+    "content-hash": "93e6211ca2e017064808f1193270a1a8",
     "packages": [
         {
             "name": "fullstackpe/micro",
-            "version": "1.1.0",
+            "version": "dev-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcomilon/micro.git",
-                "reference": "3c93584281aa4e96ae5218e102379493a070dcad"
+                "reference": "085b3dff238053d44330dd28c3e1a910b70c662b"
             },
             "require": {
                 "fullstackpe/micro-db": "^1.0",
+                "fullstackpe/micro-form": "@dev",
                 "php": ">=7.0.0"
             },
             "require-dev": {
@@ -41,7 +42,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-12-20T21:31:33+00:00"
+            "time": "2017-12-22T22:32:26+00:00"
         },
         {
             "name": "fullstackpe/micro-db",
@@ -85,12 +86,51 @@
                 "orm"
             ],
             "time": "2017-12-19T20:04:40+00:00"
+        },
+        {
+            "name": "fullstackpe/micro-form",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marcomilon/micro-form.git",
+                "reference": "5fafb0b02192d068948b55843fd4a128e339ef06"
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "atoum/atoum": "^3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "micro\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Milon",
+                    "email": "marco.milon@gmail.com",
+                    "homepage": "https://github.com/marcomilon"
+                }
+            ],
+            "description": "Form builder",
+            "keywords": [
+                "form builder"
+            ],
+            "time": "2017-12-22T21:56:32+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "fullstackpe/micro": 20,
+        "fullstackpe/micro-form": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
