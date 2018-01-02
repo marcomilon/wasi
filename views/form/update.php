@@ -1,5 +1,5 @@
 <div class="main">
-    <h3 class="main__title">New form</h3>
+    <h3 class="main__title">Update form</h3>
     <div class="row">
         <div class="col-sm-8">
             <nav aria-label="breadcrumb" role="navigation">
@@ -10,6 +10,7 @@
             </nav>
             
             <?php include "_form.php" ?>
+            
         </div>
     </div>
 </div>

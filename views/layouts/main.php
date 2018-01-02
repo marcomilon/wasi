@@ -28,5 +28,6 @@
             </div>
         </div>
     </div>
+    <script async src="js/wasi.js"></script>
 </body>
 </html>

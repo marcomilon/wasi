@@ -35,3 +35,11 @@ html, body {
     padding-left: 0;
     font-size: 0.9rem;
 }
+
+.table__date {
+    width: 15%;
+}
+
+.table__checkbox {
+    width: 3%;
+}
