@@ -4,7 +4,7 @@ namespace app\controller;
 
 use micro\Controller;
 
-class SchemaCtrl extends Controller 
+class FormCtrl extends Controller 
 {
     
     public function index() 
