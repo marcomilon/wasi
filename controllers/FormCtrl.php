@@ -26,7 +26,7 @@ class FormCtrl extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
-            $body = filter_input(INPUT_POST, 'body', FILTER_SANITIZE_STRING);
+            $body = $_POST['body'];
             
             $content = new Content();
             $content->title = $title;
@@ -50,7 +50,7 @@ class FormCtrl extends Controller
         $model = Content::find()->where($condition);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
-            $body = filter_input(INPUT_POST, 'body', FILTER_SANITIZE_STRING);
+            $body = $_POST['body'];
             
             $model->title = $title;
             $model->type = 'form';
