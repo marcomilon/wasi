@@ -45,6 +45,7 @@ class DocumentCtrl extends Controller
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+            unset($_POST['title']);
             $body = json_encode($_POST);
             
             $content = new Content();
@@ -56,23 +57,7 @@ class DocumentCtrl extends Controller
             $this->gotoHome();
         }
         
-        
-        $condition = [
-            ['=', 'id', $set]
-        ];
-        
-        $model = Content::find()->where($condition)->one();
-        $sets = json_decode($model->body);
-        
-        $forms = [];
-        foreach($sets as $form) {
-            $condition = [
-                ['=', 'id', $form]
-            ];
-            
-            $model = Content::find()->where($condition)->one();
-            $forms[] = $model->body;
-        }
+        $forms = $this->getForms($set);
         
         return $this->render('create', [
             'set' => $set,
@@ -86,12 +71,18 @@ class DocumentCtrl extends Controller
         ];
         
         $model = Content::find()->where($condition)->one();
-        $body = json_decode($model->body);
+        $body = json_decode($model->body, true);
+        $set = $body['set'];
+        unset($body['set']);
         
+        $values = array_values($body);
+        
+        $forms = $this->getForms($sets);
+                
         return $this->render('update', [
-            'model' => $model,
-            'set' => $body->set,
-            'body' => $body
+            'set' => $set,
+            'forms' => $forms,
+            'values' => $values
         ]);
     }
     
@@ -104,6 +95,33 @@ class DocumentCtrl extends Controller
         Content::find()->where($condition)->delete();
         
         $this->gotoHome();
+    }
+    
+    private function getForms($set) 
+    {
+        $sets = $this->getSets($set);
+        
+        $forms = [];
+        foreach($sets as $form) {
+            $condition = [
+                ['=', 'id', $form]
+            ];
+            
+            $model = Content::find()->where($condition)->one();
+            $forms[] = $model->body;
+        }
+        
+        return $forms;
+    }
+    
+    private function getSets($set) 
+    {
+        $condition = [
+            ['=', 'id', $set]
+        ];
+        
+        $model = Content::find()->where($condition)->one();
+        return json_decode($model->body);
     }
     
     private function gotoHome() 
