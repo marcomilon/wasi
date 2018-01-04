@@ -93,7 +93,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcomilon/micro-form.git",
-                "reference": "284267770e165e296a224abe4bdbb785a9e21e1f"
+                "reference": "e5a40bddda90de71dbc82804dc3437eda82dd048"
             },
             "require": {
                 "php": ">=7.0.0"
@@ -121,7 +121,7 @@
             "keywords": [
                 "form builder"
             ],
-            "time": "2018-01-03T20:30:32+00:00"
+            "time": "2018-01-04T21:03:18+00:00"
         }
     ],
     "packages-dev": [],

@@ -6,16 +6,17 @@ $builder = new Builder();
 
 ?>
 <form  id="needs-validation" action="" method="post" novalidate>
-    <input type="hidden" name="set" value="<?= $set ?>">
+    <input type="hidden" name="metadata[set]" value="<?= $set ?>">
     <div class="form-group">
         <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" name="title" <?= isset($model->title) ? 'value="'.$model->title.'"' : '' ?>" required>
+        <input type="text" class="form-control input-sm" id="title" name="metadata[title]" <?= isset($model->title) ? 'value="'.$model->title.'"' : '' ?>" required>
     </div>
     
     <h5 class="mt-4 mb-2">Content</h5>
     
     <?php foreach($forms as $form): ?>
-        <?= $builder->render($form); ?>
+        <?php $values = isset($body) ? $body : [] ?>
+        <?= $builder->render($form, $values); ?>
     <?php endforeach; ?>
     
     <div class="text-right">

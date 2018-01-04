@@ -32,6 +32,7 @@ class FormCtrl extends Controller
             $content->title = $title;
             $content->type = 'form';
             $content->body = $body;
+            $content->uniqid = uniqid();
             $content->save();
             
             $this->gotoHome();

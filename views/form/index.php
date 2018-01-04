@@ -1,36 +1,36 @@
 <div class="main">
     <h3 class="main__title">Forms</h3>
     
-    <a class="btn btn-primary" href="index.php?r=form/create">New form</a>
-    
-    <div class="row mt-5">
+    <div class="row">
         <div class="col-sm-8">
-            <table class="table">
+            
+            <div class="text-right mb-2">
+                <a class="btn btn-primary btn-sm" href="index.php?r=form/create"><i class="fas fa-plus"></i> Add form</a>
+            </div>
+            
+            <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">Date</th>
-                        <th scope="col">Title</th>
-                        <th scope="col"></th>
+                        <th scope="col" class="table__header">Title</th>
+                        <th scope="col" class="table__header"></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach($models as $model): ?>
                         <tr>
-                            <td class="align-middle table__date">
-                                <?= date('d/m/Y H:m', strtotime($model->created_at)) ?>
-                            </td>
                             <td class="align-middle">
-                                <?= $model->title ?>
+                                <div><?= $model->title ?></div>
+                                <div class="table__date text-muted">Created at <?= date('d/m/Y H:m', strtotime($model->created_at)) ?></div>
                             </td>
-                            <td class="text-right">
-                                <a class="btn btn-primary btn-sm" href="index.php?r=form/update&id=<?= $model->id ?>">Update</a>
-                                <a class="btn btn-danger btn-sm" href="index.php?r=form/delete&id=<?= $model->id ?>">Delete</button>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
+                            <td class="text-right align-middle">
+                                <a class="btn btn-secondary btn-sm" href="index.php?r=form/update&id=<?= $model->id ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a class="btn btn-secondary btn-sm" href="index.php?r=form/delete&id=<?= $model->id ?>"><i class="far fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         </div>
-        
     </div>
+    
+</div>

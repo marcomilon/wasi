@@ -31,6 +31,7 @@ class SetCtrl extends Controller
             $content->title = $title;
             $content->type = 'set';
             $content->body = $form;
+            $content->uniqid = uniqid();
             $content->save();
             
             $this->gotoHome();

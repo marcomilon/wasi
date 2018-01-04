@@ -15,15 +15,15 @@
     <div class="container-fluid h-100">
         
         <div class="row h-100">
-            <div class="col-sm-2 menu">
+            <div class="col-sm-1 menu">
                 <h1 class="menu__title">Wasi</h1>
                 <nav class="nav flex-column">
-                    <a class="nav-link active menu__link" href="index.php?r=form"><i class="far fa-list-alt"></i> Form</a>
-                    <a class="nav-link menu__link" href="index.php?r=set"><i class="fa fa-clone"></i> Sets</a>
-                    <a class="nav-link menu__link" href="index.php?r=document"><i class="far fa-file"></i></i> Documents</a>
+                    <a class="nav-link <?= $_GET['r'] == 'form' ? 'menu__active' : '' ?> menu__link" href="index.php?r=form"><i class="far fa-list-alt"></i> Form</a>
+                    <a class="nav-link <?= $_GET['r'] == 'set' ? 'menu__active' : '' ?> menu__link" href="index.php?r=set"><i class="fa fa-clone"></i> Sets</a>
+                    <a class="nav-link <?= $_GET['r'] == 'document' ? 'menu__active' : '' ?> menu__link" href="index.php?r=document"><i class="far fa-file"></i></i> Documents</a>
                 </nav>
             </div>
-            <div class="col-sm-10">
+            <div class="col-sm-11">
                 <?= $content ?>
             </div>
         </div>

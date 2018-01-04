@@ -11,6 +11,10 @@ html, body {
     margin: 20px 0 20px 15px;
 }
 
+.menu__active {
+    border-bottom: 1px solid #ffffffa1;
+}
+
 .menu__link {
     color: #ffffff;
 }
@@ -36,10 +40,20 @@ html, body {
     font-size: 0.9rem;
 }
 
+.table__header {
+    background-color: #f7f7f7;
+    font-weight: 300;
+    color: #c3c3c3;
+}
+
 .table__date {
-    width: 15%;
+    font-size: 0.8rem;
 }
 
 .table__checkbox {
     width: 3%;
+}
+
+.table td, .table th {
+    padding: 0.5rem .75rem;
 }

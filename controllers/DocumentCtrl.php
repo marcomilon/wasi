@@ -44,14 +44,16 @@ class DocumentCtrl extends Controller
     public function create($set) {
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
-            unset($_POST['title']);
+            $metadata = $_POST['metadata'];
+            
+            $title = filter_var($metadata['title'], FILTER_SANITIZE_STRING);
             $body = json_encode($_POST);
             
             $content = new Content();
             $content->title = $title;
             $content->type = 'document';
             $content->body = $body;
+            $content->uniqid = uniqid();
             $content->save();
             
             $this->gotoHome();
@@ -66,23 +68,38 @@ class DocumentCtrl extends Controller
     }
     
     public function update($id) {
+            
         $condition = [
             ['=', 'id', $id]
         ];
         
-        $model = Content::find()->where($condition)->one();
+        $model = Content::find()->where($condition);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $metadata = $_POST['metadata'];
+            
+            $title = filter_var($metadata['title'], FILTER_SANITIZE_STRING);
+            $body = json_encode($_POST);
+            
+            $model->title = $title;
+            $model->type = 'document';
+            $model->body = $body;
+            $model->save();
+            
+            $this->gotoHome();
+        }
+
+        $model = $model->one();
         $body = json_decode($model->body, true);
-        $set = $body['set'];
-        unset($body['set']);
-        
-        $values = array_values($body);
-        
-        $forms = $this->getForms($sets);
+        $metadata = $body['metadata'];
+        $set = $metadata['set'];
                 
+        $forms = $this->getForms($set);
+        
         return $this->render('update', [
             'set' => $set,
             'forms' => $forms,
-            'values' => $values
+            'body' => $body,
+            'model' => $model
         ]);
     }
     
