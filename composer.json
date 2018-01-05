@@ -1,8 +1,8 @@
 {
-    "name": "fullstackpe/micro-basic-app",
-    "description": "Micro Basic Application Template",
+    "name": "fullstackpe/wasi",
+    "description": "Wasi - Headless cms",
     "license": "MIT",
-    "keywords": ["framework", "project template"],
+    "keywords": ["cms", "headless cms"],
     "authors": [
       {
         "name": "Marco Milon",
@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "fullstackpe/micro": "dev-dev",
+        "fullstackpe/micro": "1.1.2",
         "fullstackpe/micro-form": "@dev"
     },
     "autoload": {
