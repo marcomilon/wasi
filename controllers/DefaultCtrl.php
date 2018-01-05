@@ -3,13 +3,26 @@
 namespace app\controller;
 
 use micro\Controller;
+use app\model\Content;
 
 class DefaultCtrl extends Controller 
 {
     
     public function index() 
     {
-        return $this->render('index');
+        $condition = [
+            ['=', 'type', 'document']
+        ];
+        
+        $models = Content::find()->where($condition)->all();
+        
+        return $this->render('index', [
+            'models' => $models
+        ]);
+        
+        return $this->render('index', [
+            'models' => $models
+        ]);
     }
     
 }
