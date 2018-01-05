@@ -2,6 +2,15 @@ html, body {
   height: 100%;
 }
 
+.logo__link {
+    color: #ffffff;
+}
+
+.logo__link:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 .menu {
     background-color: #0747a6;
     color: #ffffff;
