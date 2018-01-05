@@ -23,8 +23,8 @@
                                 <div class="table__date text-muted">Created at <?= date('d/m/Y H:m', strtotime($model->created_at)) ?></div>
                             </td>
                             <td class="text-right align-middle">
-                                <a class="btn btn-primary btn-sm" href="index.php?r=set/update&id=<?= $model->id ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <a class="btn btn-danger btn-sm" href="index.php?r=set/delete&id=<?= $model->id ?>"><i class="far fa-trash-alt"></i></a>
+                                <a class="btn btn-secondary btn-sm" href="index.php?r=set/update&id=<?= $model->id ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a class="btn btn-secondary btn-sm" href="index.php?r=set/delete&id=<?= $model->id ?>"><i class="far fa-trash-alt"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

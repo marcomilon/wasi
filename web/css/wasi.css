@@ -49,6 +49,11 @@ html, body {
     font-size: 0.9rem;
 }
 
+.inputbox {
+    background-color: #f9f9f9;
+    box-shadow: 4px 4px #efefef;
+}
+
 .table__header {
     background-color: #f7f7f7;
     font-weight: 300;
@@ -65,4 +70,20 @@ html, body {
 
 .table td, .table th {
     padding: 0.5rem .75rem;
+}
+
+.tableForm {
+    border-collapse:separate;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -moz-border-radius: .25rem;
+}
+
+.tableForm__td {
+    border-top: 0 !important;
+}
+
+.tableForm__label {
+    margin-bottom: 0;
 }

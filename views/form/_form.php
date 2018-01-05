@@ -1,5 +1,5 @@
 <form  id="needs-validation" action="" method="post" novalidate>
-    <div style="background-color: #f9f9f9;box-shadow: 4px 4px #efefef;" class="p-3">
+    <div class="inputbox p-3">
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" name="title" <?= isset($model->title) ? 'value="'.$model->title.'"' : '' ?> required>

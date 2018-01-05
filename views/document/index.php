@@ -20,7 +20,14 @@
                         <tr>
                             <td class="align-middle">
                                 <div><?= $model->title ?></div>
-                                <div class="table__date text-muted">Created at <?= date('d/m/Y H:m', strtotime($model->created_at)) ?></div>
+                                <div class="table__date text-muted">
+                                    <a class="text-muted" href="<?= isset($_SERVER['HTTPS']) ? 'https' : 'http' ?>://<?= $_SERVER['HTTP_HOST'] ?>/index.php?r=api&key=<?= $model->uniqid ?>">
+                                        <?= isset($_SERVER['HTTPS']) ? 'https' : 'http' ?>://<?= $_SERVER['HTTP_HOST'] ?>/index.php?r=api&key=<?= $model->uniqid ?>
+                                    </a>
+                                    <div>
+                                        created at <?= date('d/m/Y H:m', strtotime($model->created_at)) ?>
+                                    </div>
+                                </div>
                             </td>
                             <td class="text-right">
                                 <a class="btn btn-secondary btn-sm" href="index.php?r=document/update&id=<?= $model->id ?>"><i class="fas fa-pencil-alt"></i></a>
