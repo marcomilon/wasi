@@ -92,3 +92,14 @@ html, body {
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #dcdcdc;
 }
+
+.new-item {
+    text-align: right;
+    padding-bottom: 0.5rem;
+    text-decoration: underline;
+}
+
+.repeater__block {
+    margin-bottom: 1.0rem;
+    border-bottom: 1px solid #dcdcdc;
+}
