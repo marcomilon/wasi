@@ -1,13 +1,13 @@
 {
     "name": "fullstackpe/wasi",
-    "description": "Wasi - Headless cms",
+    "description": "Wasi - Headless Cms",
     "license": "MIT",
     "keywords": ["cms", "headless cms"],
     "authors": [
-      {
-        "name": "Marco Milon",
-        "email": "marco.milon@gmail.com"
-      }
+        {
+            "name": "Marco Milon",
+            "email": "marco.milon@gmail.com"
+        }
     ],
     "repositories": [
         {
@@ -20,13 +20,14 @@
         }
     ],
     "require": {
-        "fullstackpe/micro": "1.1.3",
+        "fullstackpe/micro": "dev-dev",
         "fullstackpe/micro-form": "@dev"
     },
     "autoload": {
-      "psr-4": {
-        "app\\controllers\\": "controllers",
-        "app\\model\\": "models"
-      }
+        "psr-4": {
+            "app\\modules\\": "modules",
+            "app\\controllers\\": "controllers",
+            "app\\model\\": "models"
+        }
     }
 }

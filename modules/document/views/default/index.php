@@ -5,7 +5,7 @@
         <div class="col-md-8">
             
             <div class="text-right mb-2">
-                <a class="btn btn-primary btn-sm" href="index.php?r=document/init"><i class="fas fa-plus"></i> Add document</a>
+                <a class="btn btn-primary btn-sm" href="index.php?r=document/default/init"><i class="fas fa-plus"></i> Add document</a>
             </div>
             
             <table class="table">
@@ -30,8 +30,8 @@
                                 </div>
                             </td>
                             <td class="text-right">
-                                <a class="btn btn-secondary btn-sm" href="index.php?r=document/update&id=<?= $model->id ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <a class="btn btn-secondary btn-sm" href="index.php?r=document/delete&id=<?= $model->id ?>"><i class="far fa-trash-alt"></i></a>                                    
+                                <a class="btn btn-secondary btn-sm" href="index.php?r=document/default/update&id=<?= $model->id ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a class="btn btn-secondary btn-sm" href="index.php?r=document/default/delete&id=<?= $model->id ?>"><i class="far fa-trash-alt"></i></a>                                    
                             </td>
                         </tr>
                     <?php endforeach; ?>

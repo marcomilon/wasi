@@ -4,7 +4,7 @@
         <div class="col-md-4">
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.php?r=form">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.php?r=document/default/index">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Document</li>
                 </ol>
             </nav>

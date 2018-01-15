@@ -1,11 +1,11 @@
 <?php 
 
-namespace app\controllers;
+namespace app\modules\form\controllers;
 
 use micro\Controller;
 use app\model\Content;
 
-class FormCtrl extends Controller 
+class DefaultCtrl extends Controller 
 {
     
     public function index() 
@@ -79,7 +79,7 @@ class FormCtrl extends Controller
     
     private function gotoHome() 
     {
-        header("Location: index.php?r=form");
+        header("Location: index.php?r=form/default/index");
         exit();
     }
 }

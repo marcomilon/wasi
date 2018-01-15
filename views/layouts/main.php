@@ -23,9 +23,9 @@
                 <h1 class="menu__title"><a href="/" class="logo__link">Wasi</a></h1>
                 <nav class="nav flex-column">
                     <a class="nav-link menu__link <?= empty($_GET['r']) ? 'menu__link--active' : '' ?>" href="/"><i class="fas fa-home"></i> Home</a>
-                    <a class="nav-link menu__link menu__link--document <?= stripos($_GET['r'], 'document') !== false ? 'menu__link--active' : '' ?>" href="index.php?r=document"><i class="far fa-file"></i></i> Documents</a>
-                    <a class="nav-link menu__link <?=  stripos($_GET['r'], 'form') !== false ? 'menu__link--active' : '' ?>" href="index.php?r=form"><i class="far fa-list-alt"></i> Forms</a>
-                    <a class="nav-link menu__link <?=  stripos($_GET['r'], 'set') !== false ? 'menu__link--active' : '' ?>" href="index.php?r=set"><i class="fa fa-clone"></i> Sets</a>
+                    <a class="nav-link menu__link menu__link--document <?= stripos($_GET['r'], 'document') !== false ? 'menu__link--active' : '' ?>" href="index.php?r=document/default/index"><i class="far fa-file"></i></i> Documents</a>
+                    <a class="nav-link menu__link <?=  stripos($_GET['r'], 'form') !== false ? 'menu__link--active' : '' ?>" href="index.php?r=form/default/index"><i class="far fa-list-alt"></i> Forms</a>
+                    <a class="nav-link menu__link <?=  stripos($_GET['r'], 'set') !== false ? 'menu__link--active' : '' ?>" href="index.php?r=set/default/index"><i class="fa fa-clone"></i> Sets</a>
                 </nav>
             </div>
             <div class="col-md-10">

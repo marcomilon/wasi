@@ -1,11 +1,11 @@
 <?php 
 
-namespace app\controllers;
+namespace app\modules\document\controllers;
 
 use micro\Controller;
 use app\model\Content;
 
-class DocumentCtrl extends Controller 
+class DefaultCtrl extends Controller 
 {
     
     public function index() 
@@ -26,7 +26,7 @@ class DocumentCtrl extends Controller
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $set = filter_input(INPUT_POST, 'set', FILTER_SANITIZE_NUMBER_INT);
             
-            header("Location: index.php?r=document/create&set=$set");
+            header("Location: index.php?r=document/default/create&set=$set");
             exit();
         }
         
@@ -143,7 +143,7 @@ class DocumentCtrl extends Controller
     
     private function gotoHome() 
     {
-        header("Location: index.php?r=document");
+        header("Location: index.php?r=document/default/index");
         exit();
     }
     

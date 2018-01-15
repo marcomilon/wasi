@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "13885115581ce0ac49a4317117c24886",
+    "content-hash": "1b0f24f9358dc353825f88b2b98693ba",
     "packages": [
         {
             "name": "fullstackpe/micro",
-            "version": "1.1.3",
+            "version": "dev-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcomilon/micro.git",
-                "reference": "384e518a32012dd4b4c9540b508e95473717b61e"
+                "reference": "9a3cb09adb9c5fe2da788823fb75b496acf75c68"
             },
             "require": {
                 "fullstackpe/micro-db": "^1.0",
@@ -42,7 +42,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2018-01-12T19:20:04+00:00"
+            "time": "2018-01-15T21:13:29+00:00"
         },
         {
             "name": "fullstackpe/micro-db",
@@ -128,6 +128,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "fullstackpe/micro": 20,
         "fullstackpe/micro-form": 20
     },
     "prefer-stable": false,

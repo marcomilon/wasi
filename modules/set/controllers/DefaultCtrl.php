@@ -1,11 +1,11 @@
 <?php 
 
-namespace app\controllers;
+namespace app\modules\set\controllers;
 
 use micro\Controller;
 use app\model\Content;
 
-class SetCtrl extends Controller 
+class DefaultCtrl extends Controller 
 {
     
     public function index() 
@@ -95,7 +95,7 @@ class SetCtrl extends Controller
     
     private function gotoHome() 
     {
-        header("Location: index.php?r=set");
+        header("Location: index.php?r=set/default/index");
         exit();
     }
     
