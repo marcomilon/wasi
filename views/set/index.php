@@ -2,7 +2,7 @@
     <h3 class="main__title">Sets</h3>
     
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-md-8">
             
             <div class="text-right mb-2">
                 <a class="btn btn-primary btn-sm" href="index.php?r=set/create"><i class="fas fa-plus"></i> Add set</a>
