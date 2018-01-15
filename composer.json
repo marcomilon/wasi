@@ -20,12 +20,12 @@
         }
     ],
     "require": {
-        "fullstackpe/micro": "1.1.2",
+        "fullstackpe/micro": "1.1.3",
         "fullstackpe/micro-form": "@dev"
     },
     "autoload": {
       "psr-4": {
-        "app\\controller\\": "controllers",
+        "app\\controllers\\": "controllers",
         "app\\model\\": "models"
       }
     }
