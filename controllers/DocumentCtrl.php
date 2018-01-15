@@ -21,7 +21,7 @@ class DocumentCtrl extends Controller
         ]);
     }
     
-    public function set() 
+    public function init() 
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $set = filter_input(INPUT_POST, 'set', FILTER_SANITIZE_NUMBER_INT);
@@ -36,7 +36,7 @@ class DocumentCtrl extends Controller
         
         $models = Content::find()->where($condition)->all();
         
-        return $this->render('set', [
+        return $this->render('init', [
             'models' => $models
         ]);
     }
@@ -94,7 +94,6 @@ class DocumentCtrl extends Controller
         $set = $metadata['set'];
                 
         $forms = $this->getForms($set);
-        
         return $this->render('update', [
             'set' => $set,
             'forms' => $forms,
@@ -116,29 +115,30 @@ class DocumentCtrl extends Controller
     
     private function getForms($set) 
     {
-        $sets = $this->getSets($set);
+        $set = $this->getSet($set);
+        $body = $set['body'];
         
         $forms = [];
-        foreach($sets as $form) {
+        foreach($body as $form) {
             $condition = [
                 ['=', 'id', $form]
             ];
             
             $model = Content::find()->where($condition)->one();
-            $forms[] = $model->body;
+            $forms[] = ['title' => $model->title, 'body' => $model->body];
         }
         
         return $forms;
     }
     
-    private function getSets($set) 
+    private function getSet($set) 
     {
         $condition = [
             ['=', 'id', $set]
         ];
         
         $model = Content::find()->where($condition)->one();
-        return json_decode($model->body);
+        return ['title' => $model->title, 'body' => json_decode($model->body)];
     }
     
     private function gotoHome() 

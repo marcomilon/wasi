@@ -2,6 +2,18 @@ html, body {
   height: 100%;
 }
 
+.breadcrumb {
+    background-color: #ffffff;
+    padding-top: 0;
+    padding-left: 0;
+    font-size: 0.9rem;
+}
+
+.inputbox {
+    background-color: #f9f9f9;
+    box-shadow: 4px 4px #efefef;
+}
+
 .logo__link {
     color: #ffffff;
 }
@@ -20,16 +32,22 @@ html, body {
     margin: 20px 0 20px 15px;
 }
 
-.menu__active {
-    border-bottom: 1px solid #ffffffa1;
-}
-
 .menu__link {
     color: #ffffff;
+    font-weight: 300;
 }
 
 .menu__link:hover {
     color: #d2d2d2;
+}
+
+.menu__link--active {
+    background-color: #f3f3f31c;
+}
+
+.menu__link--document {
+    font-weight: 600;
+    border-bottom: 1px solid #001f4e54;
 }
 
 .main {
@@ -42,37 +60,18 @@ html, body {
     border-bottom: 1px solid #e6e6e6;
 }
 
-.breadcrumb {
-    background-color: #ffffff;
-    padding-top: 0;
-    padding-left: 0;
-    font-size: 0.9rem;
-}
-
-.inputbox {
-    background-color: #f9f9f9;
-    box-shadow: 4px 4px #efefef;
-}
-
 .table__header {
     background-color: #f7f7f7;
     font-weight: 300;
     color: #c3c3c3;
+    padding: 0.5rem .75rem !important;
 }
 
 .table__date {
     font-size: 0.8rem;
 }
 
-.table__checkbox {
-    width: 3%;
-}
-
-.table td, .table th {
-    padding: 0.5rem .75rem;
-}
-
-.tableForm {
+.table-create-set {
     border-collapse:separate;
     background-color: #fff;
     border: 1px solid #ced4da;
@@ -80,10 +79,16 @@ html, body {
     -moz-border-radius: .25rem;
 }
 
-.tableForm__td {
+.table-create-set__td {
     border-top: 0 !important;
 }
 
-.tableForm__label {
+.table-create-set__label {
     margin-bottom: 0;
+}
+
+.document-title {
+    font-size: 1.3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #dcdcdc;
 }

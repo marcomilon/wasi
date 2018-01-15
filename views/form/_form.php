@@ -11,7 +11,7 @@
         </div>
         
         <div class="text-right">
-            <button type="submit" class="btn btn-primary" role='button'><i class="fas fa-save"></i> Save</button>
+            <button type="submit" class="btn btn-sm btn-primary" role='button'><i class="fas fa-save"></i> Save</button>
         </div>
     </div>
 </form>
