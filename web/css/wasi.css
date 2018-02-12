@@ -45,11 +45,6 @@ html, body {
     background-color: #f3f3f31c;
 }
 
-.menu__link--document {
-    font-weight: 600;
-    border-bottom: 1px solid #001f4e54;
-}
-
 .main {
     margin-top: 20px;
 }

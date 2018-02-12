@@ -19,7 +19,7 @@
                         <tr>
                             <td class="align-middle">
                                 <div>
-                                    <a href="index.php?r=document/update&id=<?= $model->id ?>" class="text-dark">
+                                    <a href="index.php?r=document/default/update&id=<?= $model->id ?>">
                                         <?= $model->title ?>
                                     </a>
                                 </div>

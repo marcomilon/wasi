@@ -19,7 +19,7 @@
                     <?php foreach($models as $model): ?>
                         <tr>
                             <td class="align-middle">
-                                <div><?= $model->title ?></div>
+                                <div><a href="index.php?r=form/default/update&id=<?= $model->id ?>"><?= $model->title ?></a></div>
                                 <div class="table__date text-muted">Created at <?= date('d/m/Y H:m', strtotime($model->created_at)) ?></div>
                             </td>
                             <td class="text-right align-middle">
