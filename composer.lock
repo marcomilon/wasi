@@ -4,18 +4,18 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b0f24f9358dc353825f88b2b98693ba",
+    "content-hash": "92b28aca3cb3edd2e2aa5f8be6ca1e2a",
     "packages": [
         {
             "name": "fullstackpe/micro",
-            "version": "dev-dev",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcomilon/micro.git",
-                "reference": "9a3cb09adb9c5fe2da788823fb75b496acf75c68"
+                "reference": "ffd46acd163d21a7e74e9b3d65d4a2b578e80ff9"
             },
             "require": {
-                "fullstackpe/micro-db": "^1.0",
+                "fullstackpe/micro-db": "^1.1",
                 "fullstackpe/micro-form": "@dev",
                 "php": ">=7.0.0"
             },
@@ -42,20 +42,20 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2018-01-15T21:13:29+00:00"
+            "time": "2018-02-12T21:34:10+00:00"
         },
         {
             "name": "fullstackpe/micro-db",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcomilon/micro-db.git",
-                "reference": "e3d641f0b8cf76e8d3e08cafc439d024e7d2b460"
+                "reference": "b14a4f80f144f4e58cd3260efbbb9141290aa66d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marcomilon/micro-db/zipball/e3d641f0b8cf76e8d3e08cafc439d024e7d2b460",
-                "reference": "e3d641f0b8cf76e8d3e08cafc439d024e7d2b460",
+                "url": "https://api.github.com/repos/marcomilon/micro-db/zipball/b14a4f80f144f4e58cd3260efbbb9141290aa66d",
+                "reference": "b14a4f80f144f4e58cd3260efbbb9141290aa66d",
                 "shasum": ""
             },
             "require": {
@@ -85,7 +85,7 @@
             "keywords": [
                 "orm"
             ],
-            "time": "2017-12-19T20:04:40+00:00"
+            "time": "2018-02-09T20:07:58+00:00"
         },
         {
             "name": "fullstackpe/micro-form",
@@ -128,7 +128,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fullstackpe/micro": 20,
         "fullstackpe/micro-form": 20
     },
     "prefer-stable": false,
