@@ -16,7 +16,7 @@ class Content extends ActiveRecord
     {
         $servername = "127.0.0.1";
         $username = "root";
-        $password = "fullstack";
+        $password = "";
         $database = "wasi";
         
         return new \micro\db\Connection($servername, $username, $password, $database);

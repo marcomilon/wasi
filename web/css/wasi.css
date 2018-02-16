@@ -88,13 +88,19 @@ html, body {
     border-bottom: 1px solid #dcdcdc;
 }
 
-.new-item {
+.toolbar--add {
     text-align: right;
     padding-bottom: 0.5rem;
     text-decoration: underline;
 }
 
-.repeater__block {
+.toolbar--delete {
+    text-align: right;
+    padding-bottom: 0.5rem;
+    text-decoration: underline;
+}
+
+.element {
     margin-bottom: 1.0rem;
     border-bottom: 1px solid #dcdcdc;
 }
