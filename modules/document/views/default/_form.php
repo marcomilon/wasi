@@ -19,8 +19,7 @@ $builder = new Builder($templates);
 
     <div class="inputbox p-3">
         <div class="form-group">
-            <label for="title">Document name</label>
-            <input type="text" class="form-control input-sm" id="title" name="metadata[title]" <?= isset($model->title) ? 'value="'.$model->title.'"' : '' ?> required>
+            <input placeholder="Document name" type="text" class="form-control input-sm" id="title" name="metadata[title]" <?= isset($model->title) ? 'value="'.$model->title.'"' : '' ?> required>
         </div>
         <?php foreach($forms as $form): ?>
             <p class="document-title text-dark"><a href=""><i class="fas fa-angle-down"></i> <?= $form['title'] ?></a></p>
