@@ -1,3 +1,7 @@
+<div class="text-right text-muted">
+    <a href="index.php?r=set/default/index" class="text-muted"><i class="fas fa-arrow-left"></i></a>
+</div>
+
 <form  id="needs-validation" action="" method="post" novalidate>
     <div class="inputbox p-3">
         <div class="form-group">

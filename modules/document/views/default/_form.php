@@ -9,6 +9,11 @@ $templates = [
 $builder = new Builder($templates);
 
 ?>
+
+<div class="text-right text-muted">
+    <a href="index.php?r=document/default/index" class="text-muted"><i class="fas fa-arrow-left"></i></a>
+</div>
+
 <form id="needs-validation" action="" method="post" novalidate>
     <input type="hidden" name="metadata[set]" value="<?= $set ?>">
 
