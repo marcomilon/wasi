@@ -2,7 +2,11 @@
 
 use micro\form\Builder;
 
-$builder = new Builder();
+$templates = [
+    'text' => dirname(__FILE__) . '/../inputs/input-text.php'
+];
+
+$builder = new Builder($templates);
 
 ?>
 <form id="needs-validation" action="" method="post" novalidate>
