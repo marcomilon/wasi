@@ -3,7 +3,8 @@
 use micro\form\Builder;
 
 $templates = [
-    'text' => dirname(__FILE__) . '/../inputs/input-text.php'
+    'text' => dirname(__FILE__) . '/../inputs/input-text.php',
+    'textarea' => dirname(__FILE__) . '/../inputs/textarea.php'
 ];
 
 $builder = new Builder($templates);
