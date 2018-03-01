@@ -1,5 +1,15 @@
 version: '3'
 services:
+  web:
+    image: fs/apache
+    container_name: ap-apache
+    volumes:
+     - ${DOCUMENT_ROOT}:/var/www/html/
+    ports:
+     - 80:80
+    links:
+    - db
+    restart: "no"
   db:
     image: mysql
     container_name: ap-mysql
