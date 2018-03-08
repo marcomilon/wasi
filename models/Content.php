@@ -2,9 +2,9 @@
 
 namespace app\model;
 
-use micro\db\ActiveRecord;
+use micro\Model;
 
-class Content extends ActiveRecord 
+class Content  extends Model
 {
     
     public static function tableName() 
@@ -14,12 +14,10 @@ class Content extends ActiveRecord
     
     public static function dbConnection() 
     {
-        $servername = "127.0.0.1";
-        $username = "root";
-        $password = "";
-        $database = "wasi";
+        $config = self::getConfig();
+        $db = $config['db'];
         
-        return new \micro\db\Connection($servername, $username, $password, $database);
+        return new \micro\db\Connection($db['servername'], $db['username'], $db['password'], $db['database']);
     }
     
 }

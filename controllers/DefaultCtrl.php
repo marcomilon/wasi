@@ -19,10 +19,6 @@ class DefaultCtrl extends Controller
         return $this->render('index', [
             'models' => $models
         ]);
-        
-        return $this->render('index', [
-            'models' => $models
-        ]);
     }
     
 }

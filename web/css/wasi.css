@@ -104,3 +104,9 @@ html, body {
     margin-bottom: 1.0rem;
     border-bottom: 1px solid #dcdcdc;
 }
+
+.highlight {
+    background-color: #f7f7f9;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+}

@@ -6,17 +6,13 @@ services:
     volumes:
      - ${DOCUMENT_ROOT}:/var/www/html/
     ports:
-     - 80:80
+     - 8888:80
     links:
     - db
     restart: "no"
   db:
     image: mysql
     container_name: ap-mysql
-    volumes:
-     - ${MYSQL_DATADIR}:/var/lib/mysql/
-    environment:
-      MYSQL_ROOT_PASSWORD: fullstack
     ports:
      - 3306:3306      
     restart: "no"

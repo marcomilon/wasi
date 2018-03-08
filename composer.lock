@@ -4,19 +4,19 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "92b28aca3cb3edd2e2aa5f8be6ca1e2a",
+    "content-hash": "7dfc7da4426132b71b5976c42ac1b097",
     "packages": [
         {
             "name": "fullstackpe/micro",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcomilon/micro.git",
-                "reference": "ffd46acd163d21a7e74e9b3d65d4a2b578e80ff9"
+                "reference": "8b4786da56d483cc6a23c001ab0468e35623eefe"
             },
             "require": {
                 "fullstackpe/micro-db": "^1.1",
-                "fullstackpe/micro-form": "@dev",
+                "fullstackpe/micro-form": "^1.0",
                 "php": ">=7.0.0"
             },
             "require-dev": {
@@ -42,7 +42,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2018-02-12T21:34:10+00:00"
+            "time": "2018-03-07T22:18:32+00:00"
         },
         {
             "name": "fullstackpe/micro-db",
@@ -89,11 +89,11 @@
         },
         {
             "name": "fullstackpe/micro-form",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcomilon/micro-form.git",
-                "reference": "d55e2722a36b12484d9fb444951099457e9158ef"
+                "reference": "71883b2b727cec48cb49da492b6203bb7a197a6e"
             },
             "require": {
                 "php": ">=7.0.0"
@@ -119,17 +119,16 @@
             ],
             "description": "Form builder",
             "keywords": [
-                "form builder"
+                "form builder",
+                "json"
             ],
-            "time": "2018-02-23T21:36:31+00:00"
+            "time": "2018-03-02T22:04:25+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "fullstackpe/micro-form": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
