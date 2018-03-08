@@ -1,3 +1,10 @@
+<?php 
+
+$this->parameters = [
+    'title' => 'Forms'
+];
+
+?>
 <div class="main">
     <h3 class="main__title">Forms</h3>
     

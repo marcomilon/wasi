@@ -1,3 +1,10 @@
+<?php 
+
+$this->parameters = [
+    'title' => 'Set'
+];
+
+?>
 <div class="main">
     <h3 class="main__title">Sets</h3>
     
@@ -5,7 +12,7 @@
         <div class="col-md-8">
             
             <div class="text-right mb-2">
-                <a class="btn btn-primary btn-sm <?= empty($models) ? 'disabled' : '' ?>" href="index.php?r=set/default/create"><i class="fas fa-plus"></i> Add set</a>
+                <a class="btn btn-primary btn-sm <?= empty($forms) ? 'disabled' : '' ?>" href="index.php?r=set/default/create"><i class="fas fa-plus"></i> Add set</a>
             </div>
             
             <?php if(!empty($models)): ?>
@@ -31,9 +38,13 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-            <?php else:?>
+            <?php elseif(empty($forms)):?>
                 <div class="highlight border text-center p-3 mt-4">
                     <a href="index.php?r=form/default/index">Add at least one Form before adding a Set.</a>
+                </div>
+            <?php else: ?>
+                <div class="highlight border text-center p-3 mt-4">
+                    <a href="index.php?r=set/default/create">Nothing found. Would you like to add a Set?</a>
                 </div>
             <?php endif; ?>
         </div>

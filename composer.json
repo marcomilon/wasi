@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "fullstackpe/micro": "^1.1"
+        "fullstackpe/micro": "dev-dev"
     },
     "autoload": {
         "psr-4": {

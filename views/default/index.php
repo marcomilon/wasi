@@ -1,3 +1,10 @@
+<?php 
+
+$this->parameters = [
+    'title' => 'Welcome'
+];
+
+?>
 <div class="main">
     <h3 class="main__title">Welcome</h3>
     
@@ -25,11 +32,11 @@
                                         </a>
                                     </div>
                                     <div class="table__date text-muted">
-                                        <a class="text-muted" target="_blank" href="<?= isset($_SERVER['HTTPS']) ? 'https' : 'http' ?>://<?= $_SERVER['HTTP_HOST'] ?>/index.php?r=api&key=<?= $model->uniqid ?>">
+                                        <a class="text-muted" target="_blank" href="index.php?r=api&key=<?= $model->uniqid ?>">
                                             <?= isset($_SERVER['HTTPS']) ? 'https' : 'http' ?>://<?= $_SERVER['HTTP_HOST'] ?>/index.php?r=api&key=<?= $model->uniqid ?>
                                         </a>
                                         <div>
-                                            created at <?= date('d/m/Y H:m', strtotime($model->created_at)) ?>
+                                            Created at <?= date('d/m/Y H:m', strtotime($model->created_at)) ?>
                                         </div>
                                     </div>
                                 </td>

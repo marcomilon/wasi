@@ -15,7 +15,7 @@
             <div class="col-md-4">
                 <form id="needs-validation" action="" method="post" novalidate>
                     <div class="form-group">
-                        <label for="set">Set</label>
+                        <label for="set">Sets</label>
                         <select class="form-control" id="set" name="set" required>
                             <option value="">Choose a set...</option>
                             <?php foreach($models as $model): ?>
