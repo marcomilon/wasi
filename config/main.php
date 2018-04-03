@@ -7,7 +7,8 @@ $config = [
         'username' => 'root',
         'password' => '',
         'database' => 'wasi'
-    ]
+    ],
+    'defaultCtrl' => 'welcome/main/index'
 ];
 
 return $config;

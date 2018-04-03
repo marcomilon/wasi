@@ -32,7 +32,7 @@ $this->parameters = [
                                         </a>
                                     </div>
                                     <div class="table__date text-muted">
-                                        <a class="text-muted" target="_blank" href="index.php?r=api&key=<?= $model->uniqid ?>">
+                                        <a class="text-muted" target="_blank" href="index.php?r=api/default/index&key=<?= $model->uniqid ?>">
                                             <?= isset($_SERVER['HTTPS']) ? 'https' : 'http' ?>://<?= $_SERVER['HTTP_HOST'] ?>/index.php?r=api&key=<?= $model->uniqid ?>
                                         </a>
                                         <div>

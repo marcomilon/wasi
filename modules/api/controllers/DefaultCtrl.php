@@ -1,11 +1,11 @@
 <?php 
 
-namespace app\controllers;
+namespace app\modules\api\controllers;
 
 use micro\Controller;
 use app\model\Content;
 
-class ApiCtrl extends Controller 
+class DefaultCtrl extends Controller 
 {
     public function index($key) {
         $condition = [

@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcomilon/micro.git",
-                "reference": "1a52d64dc9746e71a0bc022265ac303b615a78d1"
+                "reference": "dd001bd76efc6238386dbee66bebec77be38a267"
             },
             "require": {
                 "fullstackpe/micro-db": "^1.1",
@@ -42,7 +42,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2018-03-08T22:24:39+00:00"
+            "time": "2018-04-03T21:06:46+00:00"
         },
         {
             "name": "fullstackpe/micro-db",

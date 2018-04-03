@@ -1,11 +1,11 @@
 <?php 
 
-namespace app\controllers;
+namespace app\modules\welcome\controllers;
 
 use micro\Controller;
 use app\model\Content;
 
-class DefaultCtrl extends Controller 
+class MainCtrl extends Controller 
 {
     
     public function index() 
