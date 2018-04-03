@@ -2,13 +2,13 @@
 
 
 $config = [
+    'defaultCtrl' => 'welcome/main/index',
     'db' => [
         'servername' => 'ap-mysql',
         'username' => 'root',
         'password' => '',
         'database' => 'wasi'
-    ],
-    'defaultCtrl' => 'welcome/main/index'
+    ]
 ];
 
 return $config;

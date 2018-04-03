@@ -8,13 +8,21 @@ $this->parameters = [
 <div class="main">
     <h3 class="main__title">Documents</h3>
     
+    
     <div class="row">
-        <div class="col-md-8">
-            
+        <div class="col-md-4">
+            <?php include "_filterby.php" ?>
+        </div>
+        <div class="col-md-4">
             <div class="text-right mb-2">
                 <a class="btn btn-primary btn-sm <?= empty($sets) ? 'disabled' : '' ?>" href="index.php?r=document/default/init"><i class="fas fa-plus"></i> Add document</a>
             </div>
-            
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-8">
+                        
             <?php if(!empty($models)): ?>
                 <table class="table">
                     <thead>
