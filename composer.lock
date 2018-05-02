@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "110e212d1f2927587b9144f9449537f0",
+    "content-hash": "7c89b02ae03e94d552598049c9acb878",
     "packages": [
         {
             "name": "fullstackpe/micro",

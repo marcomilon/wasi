@@ -14,3 +14,10 @@
         }
     }, false);
 })();
+
+$(document).ready(function() {
+    $('.toggle-block').click(function(e) {
+        e.preventDefault();
+        $(this).parent().nextAll('.block:first').slideToggle();
+    });
+});

@@ -9,7 +9,17 @@
                 </ol>
             </nav>
             
-            <?php include "_form.php" ?>
+            <?php if(!empty($models)): ?>
+                <?php include "_form.php" ?>
+            <?php else:?>
+                    <div class="text-right mb-2">
+                        <a class="btn btn-primary btn-sm" href="index.php?r=form/default/create"><i class="fas fa-plus"></i> Add form</a>
+                    </div>
+                    
+                    <div class="highlight border text-center p-3 mt-4">
+                        <a href="index.php?r=form/default/index">Add at least one Form before adding a Set.</a>
+                    </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>

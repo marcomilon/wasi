@@ -13,10 +13,6 @@
         {
             "type": "git",
             "url": "https://github.com/marcomilon/micro.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/marcomilon/micro-form.git"
         }
     ],
     "require": {

@@ -1,5 +1,5 @@
 html, body {
-  height: 100%;
+    height: 100%;
 }
 
 .breadcrumb {
@@ -103,4 +103,20 @@ html, body {
 .element {
     margin-bottom: 1.0rem;
     border-bottom: 1px solid #dcdcdc;
+}
+
+.highlight {
+    background-color: #f7f7f9;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+}
+
+.belongs {
+    margin-top: 3rem;
+    font-weight: 300;
+}
+
+.filterby {
+    margin-top: 2.3rem;
+    font-weight: 300;
 }

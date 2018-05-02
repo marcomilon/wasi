@@ -1,11 +1,11 @@
 <?php 
 
-namespace app\controllers;
+namespace app\modules\welcome\controllers;
 
 use micro\Controller;
 use app\model\Content;
 
-class DefaultCtrl extends Controller 
+class MainCtrl extends Controller 
 {
     
     public function index() 
@@ -15,10 +15,6 @@ class DefaultCtrl extends Controller
         ];
         
         $models = Content::find()->where($condition)->all();
-        
-        return $this->render('index', [
-            'models' => $models
-        ]);
         
         return $this->render('index', [
             'models' => $models

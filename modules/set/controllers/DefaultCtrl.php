@@ -16,8 +16,15 @@ class DefaultCtrl extends Controller
         
         $models = Content::find()->where($condition)->all();
         
+        $condition = [
+            ['=', 'type', 'form']
+        ];
+        
+        $forms = Content::find()->where($condition)->all();        
+        
         return $this->render('index', [
-            'models' => $models
+            'models' => $models,
+            'forms' => $forms
         ]);
     }
     
