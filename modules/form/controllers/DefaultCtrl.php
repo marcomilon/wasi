@@ -24,21 +24,24 @@ class DefaultCtrl extends Controller
     
     public function create()     
     {
+        $model = new Content();
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
             $body = $_POST['body'];
             
-            $content = new Content();
-            $content->title = $title;
-            $content->type = 'form';
-            $content->body = $body;
-            $content->uniqid = uniqid();
-            $content->save();
+            $model->title = $title;
+            $model->type = 'form';
+            $model->body = $body;
+            $model->uniqid = uniqid();
+            $model->save();
             
             $this->gotoHome();
         }
         
-        return $this->render('create');
+        return $this->render('create', [
+            'model' => $model
+        ]);
         
     }
     

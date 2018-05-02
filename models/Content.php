@@ -7,6 +7,8 @@ use micro\Model;
 class Content  extends Model
 {
     
+    public $hasError = false;
+    
     public static function tableName() 
     {
         return 'content';

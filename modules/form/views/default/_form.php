@@ -6,7 +6,7 @@
     <div class="inputbox p-3">
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" <?= isset($model->title) ? 'value="'.$model->title.'"' : '' ?> required>
+            <input type="text" class="form-control" id="title" name="title" <?= $model->title ?> required>
             
         </div>
         <div class="form-group">

@@ -3,6 +3,7 @@
     "description": "Wasi - Headless Cms",
     "license": "MIT",
     "keywords": ["cms", "headless cms"],
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Marco Milon",
@@ -16,8 +17,7 @@
         }
     ],
     "require": {
-        "fullstackpe/micro": "^1.1",
-        "fullstackpe/micro-form": "^2.0"
+        "fullstackpe/micro": "dev-dev"
     },
     "autoload": {
         "psr-4": {
