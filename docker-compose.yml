@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    image: mysql
+    container_name: wasi-mysql
+    volumes:
+     - /var/lib/mysql/
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+     - 3306:3306   
+    restart: "no"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: wasi-phpmyadmin
+    ports:
+     - 8080:80
+    restart: "no"

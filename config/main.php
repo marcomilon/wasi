@@ -4,7 +4,7 @@
 $config = [
     'defaultCtrl' => 'welcome/main/index',
     'db' => [
-        'servername' => 'ap-mysql',
+        'servername' => '127.0.0.1',
         'username' => 'root',
         'password' => '',
         'database' => 'wasi'
