@@ -12,7 +12,7 @@ $this->parameters = [
         <div class="col-md-8">
             
             <div class="text-right mb-2">
-                <a class="btn btn-primary btn-sm" href="index.php?r=element/default/create"><i class="fas fa-plus"></i> Add an element</a>
+                <a class="btn btn-primary btn-sm" href="index.php?r=element/default/create"><i class="fas fa-plus"></i> Add element</a>
             </div>
             <?php if(!empty($models)): ?>
                 <table class="table table-hover">
