@@ -11,13 +11,13 @@ class DefaultCtrl extends Controller
     public function index() 
     {
         $condition = [
-            ['=', 'type', 'document']
+            ['=', 'type', Content::DOCUMENT]
         ];
         
         $models = Content::find()->where($condition)->all();
         
         $condition = [
-            ['=', 'type', 'set']
+            ['=', 'type', Content::SET]
         ];
         
         $sets = Content::find()->where($condition)->all();
@@ -38,7 +38,7 @@ class DefaultCtrl extends Controller
         }
         
         $condition = [
-            ['=', 'type', 'set']
+            ['=', 'type', Content::SET]
         ];
         
         $models = Content::find()->where($condition)->all();
@@ -58,7 +58,7 @@ class DefaultCtrl extends Controller
             
             $content = new Content();
             $content->title = $title;
-            $content->type = 'document';
+            $content->type = Content::DOCUMENT;
             $content->body = $body;
             $content->uniqid = uniqid();
             $content->save();
@@ -88,7 +88,7 @@ class DefaultCtrl extends Controller
             $body = json_encode($_POST);
             
             $model->title = $title;
-            $model->type = 'document';
+            $model->type = Content::DOCUMENT;
             $model->body = $body;
             $model->save();
             

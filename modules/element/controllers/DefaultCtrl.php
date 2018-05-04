@@ -11,7 +11,7 @@ class DefaultCtrl extends Controller
     public function index() 
     {
         $condition = [
-            ['=', 'type', 'form']
+            ['=', 'type', Content::ELEMENT]
         ];
         
         $models = Content::find()->where($condition)->all();
@@ -31,7 +31,7 @@ class DefaultCtrl extends Controller
             $body = $_POST['body'];
             
             $model->title = $title;
-            $model->type = 'form';
+            $model->type = Content::ELEMENT;
             $model->body = $body;
             $model->uniqid = uniqid();
             $model->save();
@@ -57,7 +57,7 @@ class DefaultCtrl extends Controller
             $body = $_POST['body'];
             
             $model->title = $title;
-            $model->type = 'form';
+            $model->type = Content::ELEMENT;
             $model->body = $body;
             $model->save();
             

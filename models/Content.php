@@ -6,6 +6,9 @@ use micro\Model;
 
 class Content  extends Model
 {
+    const DOCUMENT = 'document';
+    const ELEMENT  = 'element';
+    const SET      = 'set';
     
     public $hasError = false;
     
