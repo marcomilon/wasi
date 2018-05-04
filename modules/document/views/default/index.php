@@ -29,7 +29,7 @@ $this->parameters = [
                                 <td class="align-middle">
                                     <div><a href="index.php?r=document/default/update&id=<?= $model->id ?>"><?= $model->title ?></a></div>
                                     <div class="table__date text-muted">
-                                        <a class="text-muted" href="<?= isset($_SERVER['HTTPS']) ? 'https' : 'http' ?>://<?= $_SERVER['HTTP_HOST'] ?>/index.php?r=api&key=<?= $model->uniqid ?>">
+                                        <a class="text-muted" target="_blank" href="index.php?r=api/default/index&key=<?= $model->uniqid ?>">
                                             <?= isset($_SERVER['HTTPS']) ? 'https' : 'http' ?>://<?= $_SERVER['HTTP_HOST'] ?>/index.php?r=api&key=<?= $model->uniqid ?>
                                         </a>
                                         <div>

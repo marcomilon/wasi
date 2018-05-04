@@ -11,8 +11,5 @@
             
             <?php include "_form.php" ?>
         </div>
-        <div class="col-md-2">
-            <?php include "_belongs.php" ?>
-        </div>
     </div>
 </div>
