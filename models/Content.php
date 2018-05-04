@@ -10,7 +10,7 @@ class Content  extends Model
     const ELEMENT  = 'element';
     const SET      = 'set';
     
-    public $hasError = false;
+    public static $hasError = false;
     
     public static function tableName() 
     {

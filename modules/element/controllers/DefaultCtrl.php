@@ -3,6 +3,7 @@
 namespace app\modules\element\controllers;
 
 use micro\Controller;
+use micro\form\Builder;
 use app\model\Content;
 
 class DefaultCtrl extends Controller 
@@ -30,13 +31,20 @@ class DefaultCtrl extends Controller
             $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
             $body = $_POST['body'];
             
+            $builder = new Builder();
+            $validator = $builder->validateSchema($body);
+            
             $model->title = $title;
             $model->type = Content::ELEMENT;
             $model->body = $body;
             $model->uniqid = uniqid();
-            $model->save();
             
-            $this->gotoHome();
+            if ($validator->isValid()) {      
+                $model->save();                
+                $this->gotoHome();
+            }
+            
+            Content::$hasError = true;
         }
         
         return $this->render('create', [
@@ -56,12 +64,19 @@ class DefaultCtrl extends Controller
             $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
             $body = $_POST['body'];
             
+            $builder = new Builder();
+            $validator = $builder->validateSchema($body);
+            
             $model->title = $title;
             $model->type = Content::ELEMENT;
             $model->body = $body;
-            $model->save();
             
-            $this->gotoHome();
+            if ($validator->isValid()) { 
+                $model->save();
+                $this->gotoHome();
+            }
+            
+            Content::$hasError = true;
         }
         
         return $this->render('update', [
