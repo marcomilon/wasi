@@ -1,6 +1,6 @@
 <?php 
 
-namespace app\modules\form\controllers;
+namespace app\modules\element\controllers;
 
 use micro\Controller;
 use app\model\Content;
@@ -82,7 +82,7 @@ class DefaultCtrl extends Controller
     
     private function gotoHome() 
     {
-        header("Location: index.php?r=form/default/index");
+        header("Location: index.php?r=element/default/index");
         exit();
     }
 }

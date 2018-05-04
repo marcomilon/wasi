@@ -1,5 +1,5 @@
 <div class="text-right text-muted">
-    <a href="index.php?r=form/default/index" class="text-muted"><i class="fas fa-arrow-left"></i></a>
+    <a href="index.php?r=element/default/index" class="text-muted"><i class="fas fa-arrow-left"></i></a>
 </div>
 
 <form  id="needs-validation" action="" method="post" novalidate>
@@ -10,7 +10,7 @@
             
         </div>
         <div class="form-group">
-            <label for="form">Form</label>
+            <label for="form">Element</label>
             <textarea class="form-control" id="form" rows="8" name="body" required><?= isset($model->body) ? $model->body : '' ?></textarea>
         </div>
         
