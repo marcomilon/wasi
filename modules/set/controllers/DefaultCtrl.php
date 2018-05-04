@@ -20,11 +20,11 @@ class DefaultCtrl extends Controller
             ['=', 'type', Content::ELEMENT]
         ];
         
-        $forms = Content::find()->where($condition)->all();        
+        $elements = Content::find()->where($condition)->all();        
         
         return $this->render('index', [
             'models' => $models,
-            'forms' => $forms
+            'elements' => $elements
         ]);
     }
     
@@ -45,7 +45,7 @@ class DefaultCtrl extends Controller
         }
         
         $condition = [
-            ['=', 'type', 'form']
+            ['=', 'type', Content::ELEMENT]
         ];
         
         $models = Content::find()->where($condition)->all();
@@ -76,7 +76,7 @@ class DefaultCtrl extends Controller
         }
         
         $condition = [
-            ['=', 'type', 'form']
+            ['=', 'type', Content::ELEMENT]
         ];
         
         $set = $model->one();
