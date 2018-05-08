@@ -32,7 +32,7 @@ $this->parameters = [
                                 </td>
                                 <td class="text-right align-middle">
                                     <a class="btn btn-secondary btn-sm" href="index.php?r=set/default/update&id=<?= $model->id ?>"><i class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-secondary btn-sm" href="index.php?r=set/default/delete&id=<?= $model->id ?>"><i class="far fa-trash-alt"></i></a>
+                                    <a class="btn btn-secondary btn-sm confirmation-modal" href="index.php?r=set/default/delete&id=<?= $model->id ?>"><i class="far fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

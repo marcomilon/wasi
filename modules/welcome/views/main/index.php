@@ -19,7 +19,7 @@ $this->parameters = [
                 <table class="table mb-2">
                     <thead>
                         <tr>
-                            <th scope="col" class="table__header">Available endpoints</th>
+                            <th scope="col" class="table__header">Available documents</th>
                         </tr>
                     </thead>
                     <tbody>
