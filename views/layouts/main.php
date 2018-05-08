@@ -19,7 +19,7 @@
     <div class="container-fluid h-100">
         
         <div class="row h-100">
-            <div class="col-md-2 menu">
+            <div class="col-md-2 fixed-top menu">
                 <h1 class="menu__title"><a href="index.php" class="logo__link">Wasi</a></h1>
                 <nav class="nav flex-column">
                     <a class="nav-link menu__link <?= empty($_GET['r']) ? 'menu__link--active' : '' ?>" href="index.php"><i class="fas fa-home"></i> Home</a>
@@ -28,7 +28,7 @@
                     <a class="nav-link menu__link <?= stripos($_GET['r'], 'document') !== false ? 'menu__link--active' : '' ?>" href="index.php?r=document/default/index"><i class="fas fa-th-large"></i> Documents</a>
                 </nav>
             </div>
-            <div class="col-md-10">
+            <div class="offset-2 col-md-10">
                 <?= $content ?>
             </div>
         </div>

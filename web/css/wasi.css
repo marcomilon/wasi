@@ -26,6 +26,7 @@ html, body {
 .menu {
     background-color: #0747a6;
     color: #ffffff;
+    height: 100%;
 }
 
 .menu__title {
