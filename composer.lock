@@ -93,12 +93,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcomilon/micro-form.git",
-                "reference": "96d1b75034f0b5adf965a3985250a2f6af0c4fcc"
+                "reference": "565288924e79ce1ee99738bee4056aac203061f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marcomilon/micro-form/zipball/96d1b75034f0b5adf965a3985250a2f6af0c4fcc",
-                "reference": "96d1b75034f0b5adf965a3985250a2f6af0c4fcc",
+                "url": "https://api.github.com/repos/marcomilon/micro-form/zipball/565288924e79ce1ee99738bee4056aac203061f7",
+                "reference": "565288924e79ce1ee99738bee4056aac203061f7",
                 "shasum": ""
             },
             "require": {
@@ -130,7 +130,7 @@
                 "form builder",
                 "json"
             ],
-            "time": "2018-05-07T22:48:42+00:00"
+            "time": "2018-05-08T20:53:54+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
