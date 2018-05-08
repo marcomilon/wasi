@@ -1,3 +1,10 @@
+<?php 
+
+$this->parameters = [
+    'title' => 'Choose a set'
+];
+
+?>
 <div class="main">
     <h3 class="main__title">New document</h3>
     <div class="row">

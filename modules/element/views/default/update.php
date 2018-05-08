@@ -1,3 +1,10 @@
+<?php 
+
+$this->parameters = [
+    'title' => 'Update element'
+];
+
+?>
 <div class="main">
     <h3 class="main__title">Update element</h3>
     <div class="row">

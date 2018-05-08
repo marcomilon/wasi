@@ -1,3 +1,10 @@
+<?php 
+
+$this->parameters = [
+    'title' => 'New set'
+];
+
+?>
 <div class="main">
     <h3 class="main__title">New set</h3>
     <div class="row">

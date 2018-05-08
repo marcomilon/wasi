@@ -1,3 +1,10 @@
+<?php 
+
+$this->parameters = [
+    'title' => 'New element'
+];
+
+?>
 <div class="main">
     <h3 class="main__title">New element</h3>
     <div class="row">

@@ -1,7 +1,7 @@
 <?php 
 
 $this->parameters = [
-    'title' => 'Set'
+    'title' => 'Sets'
 ];
 
 ?>
