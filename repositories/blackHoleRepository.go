@@ -1,17 +1,17 @@
-package repository
+package repositories
 
 import (
 	"fmt"
 
-	"github.com/marcomilon/wasi/element"
+	"github.com/marcomilon/wasi/elements"
 )
 
 type BlackHoleRepository struct{}
 
-func (b BlackHoleRepository) create(e element.Element) {
+func (b BlackHoleRepository) Store(e elements.Element) {
 	fmt.Println("Backbox storing element: " + e.GetBody())
 }
 
-func (b BlackHoleRepository) list() {
+func (b BlackHoleRepository) List() {
 	fmt.Println("Backbox listing elements")
 }

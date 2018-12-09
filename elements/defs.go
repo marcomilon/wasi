@@ -1,4 +1,4 @@
-package element
+package elements
 
 type Element interface {
 	GetBody() string

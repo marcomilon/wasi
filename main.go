@@ -3,18 +3,20 @@ package main
 import (
 	"fmt"
 
-	"github.com/marcomilon/wasi/element"
+	"github.com/marcomilon/wasi/elements"
+	"github.com/marcomilon/wasi/repositories"
+	"github.com/marcomilon/wasi/services"
 )
 
 func main() {
 	fmt.Println("Wasi")
 
-	var e1 element.Element = element.NewElmt("Element 1", "Body 1")
-	var e2 element.Element = element.NewElmt("Element 2", "Body 2")
+	atom1 := elements.NewAtom("Body 1")
 
-	var repo element.Repository = element.BlackHoleRepository{}
-	var service element.Service = element.ElmtService{repo}
+	backHoleRepository := repositories.WhiteHoleRepository{}
 
-	service.Persist(e1)
-	service.Persist(e2)
+	atomService := services.NewAtomService(backHoleRepository)
+
+	atomService.Persist(atom1)
+
 }
