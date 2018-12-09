@@ -1,6 +1,7 @@
 package elements
 
 type Atom struct {
+	id   string
 	body string
 }
 

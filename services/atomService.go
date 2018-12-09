@@ -9,7 +9,7 @@ type AtomService struct {
 	repository repositories.Repository
 }
 
-func (a AtomService) Persist(e elements.Element) {
+func (a AtomService) Persist(e *elements.Element) {
 	a.repository.Store(e)
 }
 
