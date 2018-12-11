@@ -9,8 +9,9 @@ type AtomService struct {
 	repository repositories.Repository
 }
 
-func (a AtomService) Persist(e *elements.Element) {
-	a.repository.Store(e)
+func (a AtomService) Persist(e elements.Element) *elements.Element {
+	a.repository.Store(&e)
+	return &e
 }
 
 func (a AtomService) ReadAll() {

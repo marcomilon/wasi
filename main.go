@@ -11,12 +11,12 @@ import (
 func main() {
 	fmt.Println("Wasi")
 
-	var atom1 elements.Element = elements.NewAtom("Body 1")
+	atom1 := elements.NewAtom("Body 1")
 
 	backHoleRepository := repositories.BlackHoleRepository{}
 
 	atomService := services.NewAtomService(backHoleRepository)
 
-	atomService.Persist(&atom1)
+	atomService.Persist(atom1)
 
 }

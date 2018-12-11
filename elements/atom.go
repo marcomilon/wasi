@@ -9,6 +9,6 @@ func (a Atom) GetBody() string {
 	return a.body
 }
 
-func NewAtom(body string) Atom {
-	return Atom{body: body}
+func NewAtom(body string) *Atom {
+	return &Atom{body: body}
 }
