@@ -8,9 +8,9 @@ import (
 
 type BlackHoleRepository struct{}
 
-func (b BlackHoleRepository) Store(e *elements.Element) *elements.Element {
-	fmt.Println("Storing " + (*e).GetBody())
-	return e
+func (b BlackHoleRepository) Store(e elements.Element) {
+	fmt.Println(fmt.Sprintf("%T", e))
+	fmt.Println("Storing " + e.GetBody())
 }
 
 func (b BlackHoleRepository) List() {
