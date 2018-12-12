@@ -4,5 +4,5 @@ import "github.com/marcomilon/wasi/elements"
 
 type Repository interface {
 	Store(elements.Element)
-	List()
+	List() []elements.Element
 }
