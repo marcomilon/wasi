@@ -23,7 +23,7 @@ func TestStore(t *testing.T) {
 	if atom2.GetID() != "1" {
 		t.Error("Expected Body 1, got ", atom2.GetID())
 	}
-	
+
 	atom3 := elements.NewAtom("Testing")
 	sliceRepository.Store(atom3)
 

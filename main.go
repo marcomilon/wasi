@@ -26,9 +26,9 @@ func main() {
 	atomSliceService.Store(atom1)
 	atomSliceService.Store(atom2)
 	atomSliceService.Store(atom3)
-	
+
 	atomsList := atomSliceService.List()
-	for _, element := range atomsList  {
+	for _, element := range atomsList {
 		fmt.Printf("ID: %s, Body: %s\n", element.GetID(), element.GetBody())
 	}
 
