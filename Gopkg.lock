@@ -3,6 +3,14 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:aff61b46ef326e4a211e69245a0ca03dee77f850b6221d3fd0f5bc9208591734"
+  name = "github.com/google/logger"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "324a7c096a0d1041e2766b42187908af70e4f723"
+
+[[projects]]
+  branch = "master"
   digest = "1:89df516e4ec36be36c4ccc661f2e9007ccb13d4e970e3b7e9c96e87fe4ceb5ba"
   name = "github.com/jcelliott/lumber"
   packages = ["."]
@@ -17,9 +25,24 @@
   pruneopts = "UT"
   revision = "336beac0a992ed9abaf4ef8e7042ba7fe3335c06"
 
+[[projects]]
+  branch = "master"
+  digest = "1:0709bc182dee5d5aaa2e7c3faaed3458187f4ace5cb1e24b2b76d43a712e22c3"
+  name = "golang.org/x/sys"
+  packages = [
+    "windows",
+    "windows/registry",
+    "windows/svc/eventlog",
+  ]
+  pruneopts = "UT"
+  revision = "074acd46bca67915925527c07849494d115e7c43"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  input-imports = ["github.com/nanobox-io/golang-scribble"]
+  input-imports = [
+    "github.com/google/logger",
+    "github.com/nanobox-io/golang-scribble",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -1,8 +1,18 @@
-package elements
+package element
 
 import (
 	"testing"
 )
+
+func TestIsIdentifier(t *testing.T) {
+	atom := NewAtom("Test 1")
+
+	var i interface{} = atom
+	_, ok := i.(Identifier)
+	if ok == false {
+		t.Error("Atom doesn't not implement interface Identifier")
+	}
+}
 
 func TestNewAtom(t *testing.T) {
 	atom := NewAtom("Test 1")

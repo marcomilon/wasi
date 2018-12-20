@@ -1,22 +1,22 @@
 package services
 
 import (
-	"github.com/marcomilon/wasi/elements"
-	"github.com/marcomilon/wasi/repositories"
+	"github.com/marcomilon/wasi/element"
+	"github.com/marcomilon/wasi/repository"
 )
 
 type AtomService struct {
-	repository repositories.Repository
+	repository repository.Organizer
 }
 
-func (a AtomService) Store(e elements.Element) {
+func (a AtomService) Store(e element.Identifier) {
 	a.repository.Store(e)
 }
 
-func (a AtomService) List() []elements.Element {
+func (a AtomService) List() []element.Identifier {
 	return a.repository.List()
 }
 
-func NewAtomService(repository repositories.Repository) AtomService {
+func NewAtomService(repository repository.Organizer) AtomService {
 	return AtomService{repository: repository}
 }
