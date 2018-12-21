@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  digest = "1:5a8e3b73587c9c244b03475d573a13022cc2ec58e2f734f262fc9b8b8ee18688"
+  name = "github.com/frankenbeanies/uuid4"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "db09fa46f23d261a317d0b2db9b06e964d8aea8b"
+  version = "1.0.0"
+
+[[projects]]
   branch = "master"
   digest = "1:aff61b46ef326e4a211e69245a0ca03dee77f850b6221d3fd0f5bc9208591734"
   name = "github.com/google/logger"
@@ -41,6 +49,7 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/frankenbeanies/uuid4",
     "github.com/google/logger",
     "github.com/nanobox-io/golang-scribble",
   ]
