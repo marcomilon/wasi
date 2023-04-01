@@ -1,6 +1,7 @@
 package document_test
 
 import (
+	"io/ioutil"
 	"testing"
 
 	"github.com/marcomilon/wasi/internal/document"
@@ -13,7 +14,12 @@ func TestNewSection(t *testing.T) {
 
 	sectionDef := "testdata/section1.json"
 
-	section, err := document.NewSection(sectionDef)
+	data, err := ioutil.ReadFile(sectionDef)
+	if err != nil {
+		t.Errorf("expected %v; got %v", nil, err)
+	}
+
+	section, err := document.NewSection(data)
 
 	if err != nil {
 		t.Errorf("expected %v; got %v", nil, err)
@@ -50,7 +56,12 @@ func TestRender(t *testing.T) {
 
 	sectionDef := "testdata/section1.json"
 
-	section, err := document.NewSection(sectionDef)
+	data, err := ioutil.ReadFile(sectionDef)
+	if err != nil {
+		t.Errorf("expected %v; got %v", nil, err)
+	}
+
+	section, err := document.NewSection(data)
 
 	if err != nil {
 		t.Errorf("expected %v; got %v", nil, err)

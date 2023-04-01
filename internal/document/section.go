@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"html/template"
-	"io/ioutil"
 )
 
 type Section struct {
@@ -13,7 +12,7 @@ type Section struct {
 	Data     map[string]interface{} `json:"data"`
 }
 
-func NewSection(sectionSrc string) (Section, error) {
+func NewSection(sectionSrc []byte) (Section, error) {
 
 	section, err := extract(sectionSrc)
 
@@ -45,16 +44,11 @@ func (s Section) Render() (string, error) {
 
 }
 
-func extract(sectionStr string) (Section, error) {
-
-	data, err := ioutil.ReadFile(sectionStr)
-	if err != nil {
-		return Section{}, err
-	}
+func extract(sectionSrc []byte) (Section, error) {
 
 	var section Section
 
-	err = json.Unmarshal(data, &section)
+	err := json.Unmarshal(sectionSrc, &section)
 	if err != nil {
 		return Section{}, err
 	}

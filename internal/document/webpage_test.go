@@ -1,6 +1,7 @@
 package document_test
 
 import (
+	"io/ioutil"
 	"testing"
 
 	"github.com/marcomilon/wasi/internal/document"
@@ -13,7 +14,12 @@ func TestNewWebpage(t *testing.T) {
 
 	webpageDef := "testdata/webpage1.json"
 
-	webpage, err := document.NewWebpage(webpageDef)
+	data, err := ioutil.ReadFile(webpageDef)
+	if err != nil {
+		t.Errorf("expected %v; got %v", nil, err)
+	}
+
+	webpage, err := document.NewWebpage(data)
 	if err != nil {
 		t.Errorf("expected %v; got %v", nil, err)
 	}
@@ -37,7 +43,13 @@ func TestNewWebpage(t *testing.T) {
 func TestRenderWebPage(t *testing.T) {
 
 	webpageDef := "testdata/webpage1.json"
-	webpage, err := document.NewWebpage(webpageDef)
+
+	data, err := ioutil.ReadFile(webpageDef)
+	if err != nil {
+		t.Errorf("expected %v; got %v", nil, err)
+	}
+
+	webpage, err := document.NewWebpage(data)
 	if err != nil {
 		t.Errorf("expected %v; got %v", nil, err)
 	}

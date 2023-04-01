@@ -27,17 +27,12 @@ func (w Webpage) Render() (string, error) {
 
 }
 
-func NewWebpage(webpageDef string) (Webpage, error) {
+func NewWebpage(webpageDef []byte) (Webpage, error) {
 
 	var webpage Webpage
 	var rawWebpage map[string]interface{}
 
-	data, err := ioutil.ReadFile(webpageDef)
-	if err != nil {
-		return Webpage{}, err
-	}
-
-	err = json.Unmarshal(data, &rawWebpage)
+	err := json.Unmarshal(webpageDef, &rawWebpage)
 	if err != nil {
 		return Webpage{}, err
 	}
@@ -45,7 +40,15 @@ func NewWebpage(webpageDef string) (Webpage, error) {
 	var sectionsDef = rawWebpage["sections"].([]interface{})
 
 	for _, section := range sectionsDef {
-		section, err := NewSection(section.(string))
+
+		sectionDef := section.(string)
+
+		data, err := ioutil.ReadFile(sectionDef)
+		if err != nil {
+			return Webpage{}, err
+		}
+
+		section, err := NewSection(data)
 		if err != nil {
 			return Webpage{}, err
 		}

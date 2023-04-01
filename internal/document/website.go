@@ -26,8 +26,17 @@ func NewWebsite(websiteDef string) (Website, error) {
 	}
 
 	var webpageDef = rawWebsite["webpages"].([]interface{})
+
 	for _, webpage := range webpageDef {
-		webpage, err := NewWebpage(webpage.(string))
+
+		webpageSrc := webpage.(string)
+
+		data, err := ioutil.ReadFile(webpageSrc)
+		if err != nil {
+			return Website{}, err
+		}
+
+		webpage, err := NewWebpage(data)
 		if err != nil {
 			return Website{}, err
 		}
