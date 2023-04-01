@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "id": "1234566789",
+        "template": "testdata/section1.html"
+    },
+    "data": {
+        "title": "Hello World",
+        "items": [
+            "item1",
+            "item2",
+            "item3"
+        ],
+        "images": [
+            {
+                "alt": "img1",
+                "url": "http://www.test.com/img1"
+            },
+            {
+                "alt": "img2",
+                "url": "http://www.test.com/img2"
+            }
+        ]
+    }
+}

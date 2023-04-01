@@ -1,0 +1,9 @@
+{
+    "metadata": {
+        "id": "1234566789"
+    },
+    "webpages": [
+        "testdata/webpage1.json",
+        "testdata/webpage2.json"
+    ]
+}

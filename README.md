@@ -1,3 +1,3 @@
 # Wasi
 
-Headless CMS
+CMS

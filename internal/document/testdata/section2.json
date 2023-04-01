@@ -1,0 +1,10 @@
+{
+    "metadata": {
+        "id": "1234566789",
+        "template": "testdata/section2.html"
+    },
+    "data": {
+        "title": "Hello World 2",
+        "paragraph": "This is a paragraph"
+    }
+}

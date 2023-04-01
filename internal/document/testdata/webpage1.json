@@ -1,0 +1,9 @@
+{
+    "metadata": {
+        "id": "1234566789"
+    },
+    "sections": [
+        "testdata/section2.json",
+        "testdata/section1.json"
+    ]
+}
